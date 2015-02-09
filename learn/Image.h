@@ -6,13 +6,14 @@
 #include <string>
 #include <fstream>
 #include <iostream>
+#include "RGBColor.h"
 
 using namespace std;
 
 //data structures
-struct Colour {
-	unsigned char r,g,b,a;
-};
+//struct Colour {
+//	unsigned char r,g,b,a;
+//};
 
 class TGAImage {
 
@@ -25,10 +26,10 @@ public:
 	TGAImage(short width, short height);
 
 	//Set all pixels at once
-	void setAllPixels(Colour *pixels);
+	void setAllPixels(RGBColor *pixels);
 
 	//set individual pixels
-	void setPixel(Colour inputcolor, int xposition, int yposition);
+	void setPixel(RGBColor inputcolor, int xposition, int yposition);
 
 	void WriteImage(string filename);
 
@@ -43,7 +44,7 @@ public:
 private:
 
 	//store the pixels
-	Colour *m_pixels;
+	RGBColor *m_pixels;
 
 	short m_height;
 	short m_width;
