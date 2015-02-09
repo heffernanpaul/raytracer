@@ -1,0 +1,9 @@
+Number of objects in the scene: 9
+Total number of rays = 240000 
+Total triangle intersections = 0 
+Average intersections per ray = 0.000
+Total sub-grid intersections = 0 
+Average intersections per ray = 0.000
+Total grid iterations = 0 
+Average iterations per ray = 0.000
+Rendering time (exclude build time) = 968598 ms

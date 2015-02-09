@@ -1,0 +1,54 @@
+#include "PointLight.h"
+#include "Constants.h"
+#include "Maths.h"
+
+PointLight::PointLight(void):
+	Light (),
+	shadow_radius (1.0f),
+	color (white),
+	source (Vector3D (0,0,0))
+{}
+
+PointLight::PointLight (Vector3D _source, RGBColor _color):
+	Light (),
+	shadow_radius (1.0f),
+	color (_color),
+	source (_source)
+{}
+
+PointLight::PointLight (const PointLight& pl):
+	Light (pl.intensity),
+	shadow_radius (pl.shadow_radius),
+	color (pl.color),
+	source (pl.source)
+{}
+
+PointLight::~PointLight(void)
+{
+}
+
+Light* PointLight::clone(void) const {
+	return (new PointLight (*this));
+}
+
+
+Vector3D PointLight::get_direction (const ShadeRec& sr) {
+	Point3D sample_source;
+
+	sample_source.x = source.x + pow (-1,(float) (rand ()%2))*shadow_radius*rand_float ();
+	sample_source.y = source.y + pow (-1,(float) (rand ()%2))*shadow_radius*rand_float ();
+	sample_source.z = source.z + pow (-1,(float) (rand ()%2))*shadow_radius*rand_float ();
+	
+	Vector3D temp = sr.hit_point - source;
+	return (temp.hat());
+}
+
+RGBColor PointLight::L (const ShadeRec& sr) {
+	return intensity*color;
+}
+
+bool PointLight::in_shadow (const Ray& ray, const ShadeRec& sr) const {
+	float tmin = (source - ray.o) * ray.d;
+	float t;
+	return (sr.w.render_ptr->grid_ptr->shadow_hit (ray,t,sr.obj_ptr) && t< tmin);
+}

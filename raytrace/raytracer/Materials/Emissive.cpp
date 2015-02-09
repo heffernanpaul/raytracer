@@ -1,0 +1,36 @@
+#include "Emissive.h"
+
+
+Emissive::Emissive(void):
+	Material (),
+	ls (1.0),
+	ce (1)
+{}
+
+
+Emissive::~Emissive(void)
+{
+}
+
+Material* Emissive::clone(void) const {
+	return (new Emissive(*this));
+}	
+
+
+RGBColor Emissive::shade (ShadeRec& sr) {
+	if (-sr.normal * sr.ray.d > 0) 
+		return (ce*ls);
+	else 
+		return (black);
+}
+
+RGBColor Emissive::get_Le () const {
+    return ls*ce;
+}
+
+RGBColor Emissive::area_light_shade(ShadeRec& sr) {
+
+    if (-sr.normal * sr.ray.d > 0.0) {
+        return (ls * ce);
+    }
+    else return black;}

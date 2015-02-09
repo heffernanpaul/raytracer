@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>A1DB4A3A-0DAA-4A0D-8BD1-43ECAF3C7FB8</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>7da05c12-87f2-21e1-9e8e-db583dc90411++5974</key>
+		<string>http://vcraytracer.googlecode.com/svn/trunk/wxRaytracer/raytracer</string>
+	</dict>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>7da05c12-87f2-21e1-9e8e-db583dc90411++5974</key>
+		<string>raytracer/</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>7da05c12-87f2-21e1-9e8e-db583dc90411++5974</key>
+		<string>http://vcraytracer.googlecode.com/svn</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>http://vcraytracer.googlecode.com/svn/trunk/wxRaytracer/raytracer</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>7da05c12-87f2-21e1-9e8e-db583dc90411++5974</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>7da05c12-87f2-21e1-9e8e-db583dc90411++5974</string>
+			<key>IDESourceControlWCCName</key>
+			<string>raytracer</string>
+		</dict>
+	</array>
+</dict>
+</plist>

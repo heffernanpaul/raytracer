@@ -1,0 +1,129 @@
+// This file contains the definition of the Pinhole class
+
+#include "Constants.h" 
+#include "Point3D.h"
+#include "Vector3D.h"
+#include "Pinhole.h"
+#include <math.h>
+
+// ----------------------------------------------------------------------------- default constructor
+
+Pinhole::Pinhole(void)		
+	:	Camera(),
+		d(500),
+		zoom(1.0)
+{}
+
+
+// ----------------------------------------------------------------------------- copy constructor
+
+Pinhole::Pinhole(const Pinhole& c)   		
+	: 	Camera(c),
+		d(c.d),
+		zoom(c.zoom)
+{}
+
+
+// ----------------------------------------------------------------------------- clone
+
+Camera* 
+Pinhole::clone(void) const {
+	return (new Pinhole(*this));
+}
+
+
+
+// ----------------------------------------------------------------------------- assignment operator
+
+Pinhole& 
+Pinhole::operator= (const Pinhole& rhs) { 	
+	if (this == &rhs)
+		return (*this);
+		
+	Camera::operator= (rhs);
+
+	d 		= rhs.d;
+	zoom	= rhs.zoom;
+
+	return (*this);
+}
+
+
+// ----------------------------------------------------------------------------- destructor
+
+Pinhole::~Pinhole(void) {}	
+
+
+// ----------------------------------------------------------------------------- get_direction
+
+Vector3D
+Pinhole::get_direction(const Point2D& p) const {
+	Vector3D dir = p.x * u + p.y * v - d * w;
+	dir.normalize();
+	
+	return(dir);
+}
+
+void Pinhole::compute_view_frustum (const World& w) {
+	// left plane
+	float s = 0.5f*w.render_ptr->vp.s/zoom;
+	Vector3D n1 = get_direction (Point2D (-s*w.render_ptr->vp.hres,-s*w.render_ptr->vp.vres));
+	Vector3D n2 = get_direction (Point2D (-s*w.render_ptr->vp.hres,s*w.render_ptr->vp.vres));
+	Vector3D n = n1^n2;
+	frustum_planes[0] = Plane (eye,n);
+	// top plane
+	n1 = get_direction (Point2D (s*w.render_ptr->vp.hres,s*w.render_ptr->vp.vres));
+	n = n2^n1;
+	frustum_planes[1] = Plane (eye,n);
+	// right plane
+	n2 = get_direction (Point2D (s*w.render_ptr->vp.hres,-s*w.render_ptr->vp.vres));
+	n = n1^n2;
+	frustum_planes[2] = Plane (eye,n);
+	// bottom plane
+	n1 = get_direction (Point2D (-s*w.render_ptr->vp.hres,-s*w.render_ptr->vp.vres));
+	n = n2^n1;
+	frustum_planes[3] = Plane (eye,n);
+	
+	// NEAR AND FAR CLIPPING TO-DO LIST
+}
+
+
+// ----------------------------------------------------------------------------- render_scene
+
+void 												
+Pinhole::render_scene(const World& w) {
+	RGBColor	L = 0;
+	ViewPlane	vp(w.render_ptr->vp);	 								
+	Ray			ray;
+	int 		depth = 0;  
+	Point2D 	pp;		// sample point on a pixel
+	int n = (int)sqrt((float)vp.num_samples);
+		
+    long count = 0;
+	vp.s /= zoom;
+	ray.o = eye;
+	int rayid = 0;
+	for (int r = 0; r < vp.vres; r++)			// up
+		for (int c = 0; c < vp.hres; c++) {		// across 					
+			L = black;
+            
+            for (int p = 0; p < n; p++)	 {		// up pixel
+				for (int q = 0; q < n; q++) {	// across pixel
+					pp.x = vp.s * (c - (0.5f * vp.hres) + (q + 0.5f) / n);
+					pp.y = vp.s * (r - (0.5f * vp.vres) + (p + 0.5f) / n);
+					ray.d = get_direction(pp);
+					ray.id = rayid++;
+                    ray.depth = depth;
+					L += (w.render_ptr->tracer_ptr->trace_ray(ray, depth)).clamp ();
+                    count++;
+				}
+            }
+			L /= (float) vp.num_samples;
+			L = L.clamp ();
+			L *= exposure_time;
+			w.display_pixel(r, c, L);
+		}
+    printf("count=%ld\n", count);
+}
+
+

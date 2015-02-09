@@ -1,0 +1,74 @@
+#include <iostream>
+#include <fstream>
+#include <vector>
+
+using namespace std;
+
+#define oo 10e10
+#define MAXN 101
+
+typedef struct {
+	Vector<int> index;
+	double center[2];
+} clustering_group;
+
+FILE *fin = fopen ("test.in","r");
+FILE *fout = fopen ("test.out","w");
+
+int n;
+double bb[MAXN][4];
+Vector<clustering_group*> groups;
+
+double dist (double x0, double y0, double x1, double y1) {
+	return sqrt ((x0-x1)*(x0-x1) + (y0-y1)*(y0-y1));
+}
+
+void group (double max_distance) {
+	for (int i = 0;i<n;++i) {
+		bool found = false;
+		for (int j = 0;j<groups.size ();++j) {
+			double bb_center_x = (bb[i][0]+bb[i][2])/2;
+			double bb_center_y = (bb[i][1]+bb[i][3])/2;
+			num_bb = groups[j]->index.size ();
+			if (dist (groups[j]->center[0], groups[j]->center[1], bb_center_x, bb_center_y) < max_distance) {
+				groups[j]->index.push_back (i);
+				groups[j]->center[0] = (groups[j]->center[0] * num_bb + bb_centerx) / (num_bb+1);
+				groups[j]->center[1] = (groups[j]->center[1] * num_bb + bb_centery) / (num_bb+1);
+				found = true;
+				break;
+			}
+		}
+		if (!found) {
+			clustering_group *cg_prt = new clustering_group;
+			cg_prt->index.clear ();
+			cg_ptr->center[0] = cg_ptr->center[1] = 0;
+			groups.push_back (cg_ptr);
+		}
+	}
+}
+
+int main () {
+	fscanf (fin,"%d",&n);
+	
+	for (int i = 0;i<n;++i) 
+		for (int j = 0;j<4;++j)
+			fscanf (fin,"%lf",bb[i][j]);
+		
+	double x_min = -oo, y_min = -oo, x_max = oo, y_max = oo;
+	
+	for (int i = 0;i<n;++i) {
+		x_min = min (x_min, bb[i][0]);
+		y_min = min (y_min, bb[i][1]);
+		x_max = max (x_max, bb[i][2]);
+		y_max = max (y_max, bb[i][3]);
+	}
+	double left = 0, right = dist (x_min,y_min,x_max,y_max);
+	double mid = 0;
+	while (true) {
+		mid = (right + left)/2;
+		groups.clear ();
+		group (max_distance);
+		
+	}
+	return 0;
+}

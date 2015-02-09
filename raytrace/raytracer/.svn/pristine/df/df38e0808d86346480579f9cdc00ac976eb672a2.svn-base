@@ -1,0 +1,33 @@
+#ifndef __POINT_LIGHT__
+#define __POINT_LIGHT__
+
+#include "Light.h"
+#include "ShadeRec.h"
+#include "World.h"
+
+class PointLight : public Light
+{
+public:
+	PointLight(void);
+	PointLight (Vector3D _source, RGBColor color);
+	PointLight (const PointLight& pl);
+	~PointLight(void);
+	virtual Light* clone(void) const;
+	void set_shadow_radius (float _sr);
+	virtual Vector3D get_direction (const ShadeRec& sr);
+	virtual RGBColor L (const ShadeRec& sr);
+	virtual bool in_shadow (const Ray& ray, const ShadeRec& sr) const;
+
+private:
+	// shadow_radius: control how large the soft-edge shadow is
+	float shadow_radius; 
+	RGBColor color;
+	Vector3D source;
+};
+
+
+
+inline void PointLight::set_shadow_radius (float sr) {
+	shadow_radius = sr;
+}
+#endif

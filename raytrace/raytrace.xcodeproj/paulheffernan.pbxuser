@@ -1,0 +1,1236 @@
+// !$*UTF8*$!
+{
+	08FB7793FE84155DC02AAC07 /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 0952EEEC1A1CA0D4002B5471 /* asteroids2 */;
+		activeTarget = 0952EA531A19F7B2002B5471 /* Build with Makefile */;
+		addToTargets = (
+		);
+		breakpoints = (
+			0952EA8B1A19FAC9002B5471 /* triangle.cpp:30 */,
+			0952EACD1A19FC65002B5471 /* texture.cpp:48 */,
+			0952EADD1A19FCA6002B5471 /* texture.cpp:48 */,
+			0952EAFE1A19FE4B002B5471 /* texture.cpp:118 */,
+			0952EB151A19FEFF002B5471 /* texture.cpp:105 */,
+			0952EB3F1A1A01A2002B5471 /* texture.cpp:48 */,
+			0952EBFA1A1A0C7F002B5471 /* texture.cpp:138 */,
+			0952EBFC1A1A0C83002B5471 /* texture.cpp:138 */,
+			0952ED9F1A1C218B002B5471 /* asteroids.h:95 */,
+			0952EDBE1A1C24AC002B5471 /* Model.h:58 */,
+			0952EDC21A1C24CF002B5471 /* Model.h:77 */,
+			0952EDDB1A1C2592002B5471 /* asteroids.h:58 */,
+			0952EEA01A1C6088002B5471 /* asteroids2.h:43 */,
+			0952EEA21A1C6089002B5471 /* asteroids2.h:43 */,
+			0952EEA41A1C608C002B5471 /* asteroids2.h:43 */,
+			095E99041A1D3A8800F564D5 /* Shader.h:47 */,
+			095E99361A1D51E500F564D5 /* asteroids2.h:43 */,
+			095E993C1A1D51EF00F564D5 /* Shader.h:48 */,
+			095E993E1A1D51FC00F564D5 /* asteroids2.h:43 */,
+			095E99451A1D525300F564D5 /* asteroids2.h:43 */,
+			095E99481A1D526200F564D5 /* asteroids2.h:43 */,
+			095E994B1A1D527900F564D5 /* asteroids2.h:43 */,
+		);
+		codeSenseManager = 0952EA431A19BE95002B5471 /* Code sense */;
+		executables = (
+			0952EA381A19BE67002B5471 /* triangle2 */,
+			0952EA711A19F95E002B5471 /* texture2 */,
+			0952EA861A19FA85002B5471 /* triangle */,
+			0952ED821A1C20C6002B5471 /* asteroids */,
+			0952EEEC1A1CA0D4002B5471 /* asteroids2 */,
+		);
+		expressions = (
+			mesh,
+		);
+		perUserDictionary = {
+			"PBXConfiguration.PBXBreakpointsDataSource.v1:1CA1AED706398EBD00589147" = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXBreakpointsDataSource_BreakpointID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					20,
+					198,
+					20,
+					99,
+					99,
+					29,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXBreakpointsDataSource_ActionID,
+					PBXBreakpointsDataSource_TypeID,
+					PBXBreakpointsDataSource_BreakpointID,
+					PBXBreakpointsDataSource_UseID,
+					PBXBreakpointsDataSource_LocationID,
+					PBXBreakpointsDataSource_ConditionID,
+					PBXBreakpointsDataSource_IgnoreCountID,
+					PBXBreakpointsDataSource_ContinueID,
+				);
+			};
+			"PBXConfiguration.PBXBreakpointsDataSource.v1:1CE0B20506471E060097A5F4" = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXBreakpointsDataSource_BreakpointID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					20,
+					321,
+					20,
+					219,
+					220,
+					183,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXBreakpointsDataSource_ActionID,
+					PBXBreakpointsDataSource_TypeID,
+					PBXBreakpointsDataSource_BreakpointID,
+					PBXBreakpointsDataSource_UseID,
+					PBXBreakpointsDataSource_LocationID,
+					PBXBreakpointsDataSource_ConditionID,
+					PBXBreakpointsDataSource_IgnoreCountID,
+					PBXBreakpointsDataSource_ContinueID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXExecutablesDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXExecutablesDataSource_NameID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					22,
+					300,
+					721,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXExecutablesDataSource_ActiveFlagID,
+					PBXExecutablesDataSource_NameID,
+					PBXExecutablesDataSource_CommentsID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					833,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXFindDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFindDataSource_LocationID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					200,
+					847,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFindDataSource_MessageID,
+					PBXFindDataSource_LocationID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXSymbolsDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXSymbolsDataSource_SymbolNameID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					16,
+					200,
+					50,
+					773,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXSymbolsDataSource_SymbolTypeIconID,
+					PBXSymbolsDataSource_SymbolNameID,
+					PBXSymbolsDataSource_SymbolTypeID,
+					PBXSymbolsDataSource_ReferenceNameID,
+				);
+			};
+			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					793,
+					60,
+					20,
+					48,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 441850064;
+			PBXWorkspaceStateSaveDate = 441850064;
+		};
+		perUserProjectItems = {
+			093480941A5618DB006A3775 /* PBXTextBookmark */ = 093480941A5618DB006A3775 /* PBXTextBookmark */;
+			0952EA771A19FA4F002B5471 /* PBXTargetBookmark */ = 0952EA771A19FA4F002B5471 /* PBXTargetBookmark */;
+			0952EB711A1A041B002B5471 /* PBXTextBookmark */ = 0952EB711A1A041B002B5471 /* PBXTextBookmark */;
+			0952EB951A1A0577002B5471 /* PBXTextBookmark */ = 0952EB951A1A0577002B5471 /* PBXTextBookmark */;
+			0952EB961A1A0577002B5471 /* PBXTextBookmark */ = 0952EB961A1A0577002B5471 /* PBXTextBookmark */;
+			0952ED381A1C1D23002B5471 /* PBXTextBookmark */ = 0952ED381A1C1D23002B5471 /* PBXTextBookmark */;
+			0952ED601A1C1EAD002B5471 /* PBXTextBookmark */ = 0952ED601A1C1EAD002B5471 /* PBXTextBookmark */;
+			0952ED621A1C1EAD002B5471 /* PBXTextBookmark */ = 0952ED621A1C1EAD002B5471 /* PBXTextBookmark */;
+			0952EEC31A1C6467002B5471 /* PBXTextBookmark */ = 0952EEC31A1C6467002B5471 /* PBXTextBookmark */;
+			0952EEE51A1CA07C002B5471 /* PBXTextBookmark */ = 0952EEE51A1CA07C002B5471 /* PBXTextBookmark */;
+			095E99311A1D517600F564D5 /* PBXTextBookmark */ = 095E99311A1D517600F564D5 /* PBXTextBookmark */;
+			095E99411A1D520600F564D5 /* PBXTextBookmark */ = 095E99411A1D520600F564D5 /* PBXTextBookmark */;
+			095E99D21A1DAF0800F564D5 /* PBXTextBookmark */ = 095E99D21A1DAF0800F564D5 /* PBXTextBookmark */;
+			095E99D31A1DAF0800F564D5 /* PBXTextBookmark */ = 095E99D31A1DAF0800F564D5 /* PBXTextBookmark */;
+			095E99DF1A1DAF5300F564D5 /* PBXTextBookmark */ = 095E99DF1A1DAF5300F564D5 /* PBXTextBookmark */;
+			095E9A001A1F2F0000F564D5 /* PBXTextBookmark */ = 095E9A001A1F2F0000F564D5 /* PBXTextBookmark */;
+			09A9D0911A1F6574001AF919 /* PBXTextBookmark */ = 09A9D0911A1F6574001AF919 /* PBXTextBookmark */;
+			09A9D0921A1F6574001AF919 /* PBXTextBookmark */ = 09A9D0921A1F6574001AF919 /* PBXTextBookmark */;
+			09A9D0AF1A1F660B001AF919 /* PBXTextBookmark */ = 09A9D0AF1A1F660B001AF919 /* PBXTextBookmark */;
+			09A9D0BB1A1F6667001AF919 /* PBXTextBookmark */ = 09A9D0BB1A1F6667001AF919 /* PBXTextBookmark */;
+			09A9D0C11A1F6681001AF919 /* PBXTextBookmark */ = 09A9D0C11A1F6681001AF919 /* PBXTextBookmark */;
+			09AA115B1A20C0F0002CB963 /* PBXTextBookmark */ = 09AA115B1A20C0F0002CB963 /* PBXTextBookmark */;
+		};
+		sourceControlManager = 0952EA421A19BE95002B5471 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	093480941A5618DB006A3775 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 09FE1CEB1A1F62D10092BBAF /* reflection.h */;
+		name = "reflection.h: 388";
+		rLen = 0;
+		rLoc = 12556;
+		rType = 0;
+		vrLen = 1086;
+		vrLoc = 1424;
+	};
+	0952EA381A19BE67002B5471 /* triangle2 */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 1;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = triangle2;
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	0952EA3E1A19BE95002B5471 /* texture.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1055, 2782}}";
+			sepNavSelRange = "{1034, 0}";
+			sepNavVisRange = "{1034, 1101}";
+			sepNavWindowFrame = "{{15, 4}, {1045, 774}}";
+		};
+	};
+	0952EA3F1A19BE95002B5471 /* triangle.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1011, 1638}}";
+			sepNavSelRange = "{570, 499}";
+			sepNavVisRange = "{267, 914}";
+			sepNavWindowFrame = "{{15, 4}, {1045, 774}}";
+		};
+	};
+	0952EA421A19BE95002B5471 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	0952EA431A19BE95002B5471 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	0952EA461A19BEBA002B5471 /* Makefile */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1011, 429}}";
+			sepNavSelRange = "{510, 0}";
+			sepNavVisRange = "{0, 925}";
+			sepNavWindowFrame = "{{15, 4}, {1045, 774}}";
+		};
+	};
+	0952EA531A19F7B2002B5471 /* Build with Makefile */ = {
+		activeExec = 0;
+	};
+	0952EA711A19F95E002B5471 /* texture2 */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 1;
+		configStateDict = {
+			"PBXLSLaunchAction-0" = {
+				PBXLSLaunchAction = 0;
+				PBXLSLaunchStartAction = 1;
+				PBXLSLaunchStdioStyle = 2;
+				PBXLSLaunchStyle = 0;
+				class = PBXLSRunLaunchConfig;
+				commandLineArgs = (
+				);
+				displayName = "Executable Runner";
+				environment = {
+				};
+				identifier = com.apple.Xcode.launch.runConfig;
+				remoteHostInfo = "";
+				startActionInfo = "";
+			};
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		launchableReference = 0952EA721A19F95E002B5471 /* texture */;
+		libgmallocEnabled = 0;
+		name = texture2;
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+		startupPath = "<<ProjectDirectory>>";
+		variableFormatDictionary = {
+		};
+	};
+	0952EA721A19F95E002B5471 /* texture */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = "compiled.mach-o.executable";
+		name = texture;
+		path = /Users/paulheffernan/Projects/xcode/open.gl/triangle2/texture;
+		sourceTree = "<absolute>";
+	};
+	0952EA771A19FA4F002B5471 /* PBXTargetBookmark */ = {
+		isa = PBXTargetBookmark;
+		trg = 0952EA531A19F7B2002B5471 /* Build with Makefile */;
+	};
+	0952EA861A19FA85002B5471 /* triangle */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 1;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		launchableReference = 0952EA871A19FA85002B5471 /* triangle */;
+		libgmallocEnabled = 0;
+		name = triangle;
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+		startupPath = "<<ProjectDirectory>>";
+		variableFormatDictionary = {
+		};
+	};
+	0952EA871A19FA85002B5471 /* triangle */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = "compiled.mach-o.executable";
+		name = triangle;
+		path = /Users/paulheffernan/Projects/xcode/open.gl/triangle2/triangle;
+		sourceTree = "<absolute>";
+	};
+	0952EA8B1A19FAC9002B5471 /* triangle.cpp:30 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 0952EA3F1A19BE95002B5471 /* triangle.cpp */;
+		functionName = "main()";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 30;
+		modificationTime = 438129291.009449;
+		originalNumberOfMultipleMatches = 1;
+		state = 0;
+	};
+	0952EACD1A19FC65002B5471 /* texture.cpp:48 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 0952EA3E1A19BE95002B5471 /* texture.cpp */;
+		functionName = "main()";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 48;
+		modificationTime = 438129291.011067;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	0952EADD1A19FCA6002B5471 /* texture.cpp:48 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 0952EA3E1A19BE95002B5471 /* texture.cpp */;
+		functionName = "main()";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 48;
+		modificationTime = 438129291.0098261;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	0952EAFE1A19FE4B002B5471 /* texture.cpp:118 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 0952EA3E1A19BE95002B5471 /* texture.cpp */;
+		functionName = "main()";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 118;
+		modificationTime = 438129291.0102989;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	0952EB151A19FEFF002B5471 /* texture.cpp:105 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 0952EA3E1A19BE95002B5471 /* texture.cpp */;
+		functionName = "main()";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 105;
+		location = texture;
+		modificationTime = 438129120.510352;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	0952EB3F1A1A01A2002B5471 /* texture.cpp:48 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 0952EA3E1A19BE95002B5471 /* texture.cpp */;
+		functionName = "main()";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 48;
+		modificationTime = 438129291.010674;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	0952EB581A1A0221002B5471 /* basic_string.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = basic_string.h;
+		path = "/usr/include/c++/4.2.1/bits/basic_string.h";
+		sourceTree = "<absolute>";
+	};
+	0952EB651A1A028B002B5471 /* Window.hpp */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.cpp.h;
+		name = Window.hpp;
+		path = /Library/Frameworks/SFML.framework/Versions/2.1.0/Headers/Window/Window.hpp;
+		sourceTree = "<absolute>";
+	};
+	0952EB711A1A041B002B5471 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0952EB651A1A028B002B5471 /* Window.hpp */;
+		name = "Window.hpp: 178";
+		rLen = 37;
+		rLoc = 7590;
+		rType = 0;
+		vrLen = 1322;
+		vrLoc = 7436;
+	};
+	0952EB741A1A041B002B5471 /* atomicity.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = atomicity.h;
+		path = "/usr/include/c++/4.2.1/ext/atomicity.h";
+		sourceTree = "<absolute>";
+	};
+	0952EB951A1A0577002B5471 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0952EB581A1A0221002B5471 /* basic_string.h */;
+		name = "basic_string.h: 234";
+		rLen = 0;
+		rLoc = 8561;
+		rType = 0;
+		vrLen = 877;
+		vrLoc = 7920;
+	};
+	0952EB961A1A0577002B5471 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0952EB741A1A041B002B5471 /* atomicity.h */;
+		name = "atomicity.h: 41";
+		rLen = 0;
+		rLoc = 1728;
+		rType = 0;
+		vrLen = 1218;
+		vrLoc = 1034;
+	};
+	0952EBFA1A1A0C7F002B5471 /* texture.cpp:138 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 0952EA3E1A19BE95002B5471 /* texture.cpp */;
+		functionName = "main()";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 138;
+		modificationTime = 438129291.007659;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	0952EBFC1A1A0C83002B5471 /* texture.cpp:138 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 0952EA3E1A19BE95002B5471 /* texture.cpp */;
+		functionName = "main()";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 138;
+		modificationTime = 438129291.008681;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	0952ECB91A1BDEE3002B5471 /* asteroids.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {986, 2873}}";
+			sepNavSelRange = "{1443, 0}";
+			sepNavVisRange = "{742, 1636}";
+			sepNavWindowFrame = "{{15, 4}, {1045, 774}}";
+		};
+	};
+	0952ECBA1A1BDEE3002B5471 /* asteroids.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1011, 453}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 174}";
+			sepNavWindowFrame = "{{15, 4}, {1045, 774}}";
+		};
+	};
+	0952ECDC1A1C1660002B5471 /* Shader.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1011, 1391}}";
+			sepNavSelRange = "{1234, 0}";
+			sepNavVisRange = "{582, 1281}";
+			sepNavWindowFrame = "{{15, 4}, {1045, 774}}";
+		};
+	};
+	0952ED0A1A1C1B83002B5471 /* asteroids.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		path = asteroids.h;
+		sourceTree = "<group>";
+	};
+	0952ED241A1C1CCC002B5471 /* Camera.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1727, 1521}}";
+			sepNavSelRange = "{4680, 0}";
+			sepNavVisRange = "{3261, 1419}";
+			sepNavWindowFrame = "{{15, 4}, {1045, 774}}";
+		};
+	};
+	0952ED381A1C1D23002B5471 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0952ED241A1C1CCC002B5471 /* Camera.h */;
+		name = "Camera.h: 135";
+		rLen = 0;
+		rLoc = 4680;
+		rType = 0;
+		vrLen = 1419;
+		vrLoc = 3261;
+	};
+	0952ED461A1C1D76002B5471 /* Model.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1510, 2639}}";
+			sepNavSelRange = "{1242, 0}";
+			sepNavVisRange = "{1442, 1472}";
+			sepNavWindowFrame = "{{15, 4}, {1045, 774}}";
+		};
+	};
+	0952ED4B1A1C1D96002B5471 /* Mesh.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1011, 1677}}";
+			sepNavSelRange = "{4104, 0}";
+			sepNavVisRange = "{2516, 1587}";
+			sepNavWindowFrame = "{{15, 4}, {1045, 774}}";
+		};
+	};
+	0952ED601A1C1EAD002B5471 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0952ECBA1A1BDEE3002B5471 /* asteroids.cpp */;
+		name = "asteroids.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 174;
+		vrLoc = 0;
+	};
+	0952ED621A1C1EAD002B5471 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0952ED4B1A1C1D96002B5471 /* Mesh.h */;
+		name = "Mesh.h: 129";
+		rLen = 0;
+		rLoc = 4095;
+		rType = 0;
+		vrLen = 1587;
+		vrLoc = 2516;
+	};
+	0952ED821A1C20C6002B5471 /* asteroids */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 1;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		launchableReference = 0952ED831A1C20C6002B5471 /* asteroids */;
+		libgmallocEnabled = 0;
+		name = asteroids;
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+		startupPath = "<<ProjectDirectory>>";
+		variableFormatDictionary = {
+			$fctrl = 1;
+			$fioff = 1;
+			$fiseg = 1;
+			$fooff = 1;
+			$fop = 1;
+			$foseg = 1;
+			$fstat = 1;
+			$ftag = 1;
+			$mxcsr = 1;
+		};
+	};
+	0952ED831A1C20C6002B5471 /* asteroids */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = "compiled.mach-o.executable";
+		name = asteroids;
+		path = /Users/paulheffernan/Projects/xcode/open.gl/triangle2/asteroids;
+		sourceTree = "<absolute>";
+	};
+	0952ED9F1A1C218B002B5471 /* asteroids.h:95 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 0952ECB91A1BDEE3002B5471 /* asteroids.h */;
+		functionName = "main()";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 95;
+		modificationTime = 438129291.0090739;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	0952EDBE1A1C24AC002B5471 /* Model.h:58 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 0952ED461A1C1D76002B5471 /* Model.h */;
+		functionName = "loadModel(string path)";
+		hitCount = 1;
+		ignoreCount = 0;
+		lineNumber = 58;
+		location = asteroids2;
+		modificationTime = 438129143.0588011;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	0952EDC21A1C24CF002B5471 /* Model.h:77 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 0952ED461A1C1D76002B5471 /* Model.h */;
+		functionName = "processNode(aiNode* node, const aiScene* scene)";
+		hitCount = 1;
+		ignoreCount = 0;
+		lineNumber = 77;
+		location = asteroids2;
+		modificationTime = 438129145.18998;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	0952EDDB1A1C2592002B5471 /* asteroids.h:58 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 0952ECB91A1BDEE3002B5471 /* asteroids.h */;
+		functionName = "main()";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 58;
+		modificationTime = 438129291.008284;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	0952EE261A1C5C82002B5471 /* asteroids2.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1011, 3094}}";
+			sepNavSelRange = "{8344, 0}";
+			sepNavVisRange = "{2673, 1750}";
+			sepNavWindowFrame = "{{15, 4}, {1045, 774}}";
+		};
+	};
+	0952EE271A1C5C82002B5471 /* asteroids2.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1011, 447}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 176}";
+			sepNavWindowFrame = "{{15, 4}, {1045, 774}}";
+		};
+	};
+	0952EEA01A1C6088002B5471 /* asteroids2.h:43 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 0952EE261A1C5C82002B5471 /* asteroids2.h */;
+		functionName = "key_callback(GLFWwindow* window, int key, int scancode, int action, int mode)";
+		hitCount = 5;
+		ignoreCount = 0;
+		lineNumber = 43;
+		location = asteroids2;
+		modificationTime = 438129202.91879;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	0952EEA21A1C6089002B5471 /* asteroids2.h:43 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 0952EE261A1C5C82002B5471 /* asteroids2.h */;
+		functionName = "key_callback(GLFWwindow* window, int key, int scancode, int action, int mode)";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 43;
+		location = asteroids2;
+		modificationTime = 438129203.7789431;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	0952EEA41A1C608C002B5471 /* asteroids2.h:43 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 0952EE261A1C5C82002B5471 /* asteroids2.h */;
+		functionName = "Do_Movement()";
+		hitCount = 1;
+		ignoreCount = 0;
+		lineNumber = 43;
+		location = asteroids2;
+		modificationTime = 438129152.809589;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	0952EEC31A1C6467002B5471 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0952EA3F1A19BE95002B5471 /* triangle.cpp */;
+		name = "triangle.cpp: 30";
+		rLen = 499;
+		rLoc = 570;
+		rType = 0;
+		vrLen = 914;
+		vrLoc = 267;
+	};
+	0952EEE51A1CA07C002B5471 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0952ED0A1A1C1B83002B5471 /* asteroids.h */;
+		name = "asteroids.h: 61";
+		rLen = 0;
+		rLoc = 1407;
+		rType = 0;
+		vrLen = 1186;
+		vrLoc = 1951;
+	};
+	0952EEEC1A1CA0D4002B5471 /* asteroids2 */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 1;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		launchableReference = 0952EEED1A1CA0D4002B5471 /* asteroids2 */;
+		libgmallocEnabled = 0;
+		name = asteroids2;
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+		startupPath = "<<ProjectDirectory>>";
+		variableFormatDictionary = {
+		};
+	};
+	0952EEED1A1CA0D4002B5471 /* asteroids2 */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = "compiled.mach-o.executable";
+		name = asteroids2;
+		path = /Users/paulheffernan/Projects/xcode/open.gl/triangle2/asteroids2;
+		sourceTree = "<absolute>";
+	};
+	095E98DE1A1D370000F564D5 /* instancing.frag */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1011, 435}}";
+			sepNavSelRange = "{279, 0}";
+			sepNavVisRange = "{0, 279}";
+			sepNavWindowFrame = "{{15, 4}, {1045, 774}}";
+		};
+	};
+	095E98DF1A1D370000F564D5 /* instancing.vs */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1011, 435}}";
+			sepNavSelRange = "{333, 0}";
+			sepNavVisRange = "{0, 333}";
+			sepNavWindowFrame = "{{15, 4}, {1045, 774}}";
+		};
+	};
+	095E99041A1D3A8800F564D5 /* Shader.h:47 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 0952ECDC1A1C1660002B5471 /* Shader.h */;
+		functionName = "Shader(const GLchar* vertexPath, const GLchar* fragmentPath)";
+		hitCount = 1;
+		ignoreCount = 0;
+		lineNumber = 47;
+		location = asteroids2;
+		modificationTime = 438129137.4062589;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	095E99311A1D517600F564D5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0952EE271A1C5C82002B5471 /* asteroids2.cpp */;
+		name = "asteroids2.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 176;
+		vrLoc = 0;
+	};
+	095E99361A1D51E500F564D5 /* asteroids2.h:43 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 0952EE261A1C5C82002B5471 /* asteroids2.h */;
+		functionName = "Do_Movement()";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 43;
+		location = asteroids2;
+		modificationTime = 438129150.1057078;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	095E993C1A1D51EF00F564D5 /* Shader.h:48 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 0952ECDC1A1C1660002B5471 /* Shader.h */;
+		functionName = "Shader(const GLchar* vertexPath, const GLchar* fragmentPath)";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 48;
+		location = asteroids2;
+		modificationTime = 438129136.488299;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	095E993E1A1D51FC00F564D5 /* asteroids2.h:43 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 0952EE261A1C5C82002B5471 /* asteroids2.h */;
+		functionName = "Do_Movement()";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 43;
+		location = asteroids2;
+		modificationTime = 438129239.091571;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	095E99411A1D520600F564D5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0952ED461A1C1D76002B5471 /* Model.h */;
+		name = "Model.h: 56";
+		rLen = 0;
+		rLoc = 1242;
+		rType = 0;
+		vrLen = 1472;
+		vrLoc = 1442;
+	};
+	095E99451A1D525300F564D5 /* asteroids2.h:43 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 0952EE261A1C5C82002B5471 /* asteroids2.h */;
+		functionName = "main()";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 43;
+		location = asteroids2;
+		modificationTime = 438129235.571416;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	095E99481A1D526200F564D5 /* asteroids2.h:43 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 0952EE261A1C5C82002B5471 /* asteroids2.h */;
+		functionName = "main()";
+		hitCount = 1;
+		ignoreCount = 0;
+		lineNumber = 43;
+		location = asteroids2;
+		modificationTime = 438129251.596947;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	095E994B1A1D527900F564D5 /* asteroids2.h:43 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 0952EE261A1C5C82002B5471 /* asteroids2.h */;
+		functionName = "main()";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 43;
+		location = asteroids2;
+		modificationTime = 438129273.778075;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	095E996E1A1D93B600F564D5 /* advanced.frag */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1011, 429}}";
+			sepNavSelRange = "{161, 0}";
+			sepNavVisRange = "{0, 161}";
+			sepNavWindowFrame = "{{15, 4}, {1045, 774}}";
+		};
+	};
+	095E996F1A1D93B600F564D5 /* advanced.vs */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1011, 435}}";
+			sepNavSelRange = "{297, 0}";
+			sepNavVisRange = "{0, 297}";
+			sepNavWindowFrame = "{{15, 4}, {1045, 774}}";
+		};
+	};
+	095E99D21A1DAF0800F564D5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 095E98DF1A1D370000F564D5 /* instancing.vs */;
+		name = "instancing.vs: 16";
+		rLen = 0;
+		rLoc = 333;
+		rType = 0;
+		vrLen = 333;
+		vrLoc = 0;
+	};
+	095E99D31A1DAF0800F564D5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 095E98DE1A1D370000F564D5 /* instancing.frag */;
+		name = "instancing.frag: 14";
+		rLen = 0;
+		rLoc = 279;
+		rType = 0;
+		vrLen = 279;
+		vrLoc = 0;
+	};
+	095E99DF1A1DAF5300F564D5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0952EA3E1A19BE95002B5471 /* texture.cpp */;
+		name = "texture.cpp: 49";
+		rLen = 0;
+		rLoc = 1034;
+		rType = 0;
+		vrLen = 1101;
+		vrLoc = 1034;
+	};
+	095E9A001A1F2F0000F564D5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 095E996F1A1D93B600F564D5 /* advanced.vs */;
+		name = "advanced.vs: 14";
+		rLen = 0;
+		rLoc = 297;
+		rType = 0;
+		vrLen = 297;
+		vrLoc = 0;
+	};
+	09A9D08C1A1F64F2001AF919 /* reflection.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1011, 429}}";
+			sepNavSelRange = "{175, 0}";
+			sepNavVisRange = "{0, 175}";
+			sepNavWindowFrame = "{{15, 4}, {1045, 774}}";
+		};
+	};
+	09A9D0911A1F6574001AF919 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 095E996E1A1D93B600F564D5 /* advanced.frag */;
+		name = "advanced.frag: 12";
+		rLen = 0;
+		rLoc = 161;
+		rType = 0;
+		vrLen = 161;
+		vrLoc = 0;
+	};
+	09A9D0921A1F6574001AF919 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 09A9D08C1A1F64F2001AF919 /* reflection.cpp */;
+		name = "reflection.cpp: 11";
+		rLen = 0;
+		rLoc = 175;
+		rType = 0;
+		vrLen = 175;
+		vrLoc = 0;
+	};
+	09A9D0AF1A1F660B001AF919 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0952EE261A1C5C82002B5471 /* asteroids2.h */;
+		name = "asteroids2.h: 238";
+		rLen = 0;
+		rLoc = 8344;
+		rType = 0;
+		vrLen = 1750;
+		vrLoc = 2673;
+	};
+	09A9D0BB1A1F6667001AF919 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0952EA461A19BEBA002B5471 /* Makefile */;
+		name = "Makefile: 8";
+		rLen = 0;
+		rLoc = 510;
+		rType = 0;
+		vrLen = 925;
+		vrLoc = 0;
+	};
+	09A9D0C11A1F6681001AF919 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0952ECDC1A1C1660002B5471 /* Shader.h */;
+		name = "Shader.h: 47";
+		rLen = 0;
+		rLoc = 1234;
+		rType = 0;
+		vrLen = 1281;
+		vrLoc = 582;
+	};
+	09AA115B1A20C0F0002CB963 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 09FE1CEB1A1F62D10092BBAF /* reflection.h */;
+		name = "reflection.h: 388";
+		rLen = 0;
+		rLoc = 12556;
+		rType = 0;
+		vrLen = 1153;
+		vrLoc = 1357;
+	};
+	09FE1CEB1A1F62D10092BBAF /* reflection.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1011, 5213}}";
+			sepNavSelRange = "{12556, 0}";
+			sepNavVisRange = "{1424, 1086}";
+			sepNavWindowFrame = "{{15, 4}, {1045, 774}}";
+		};
+	};
+	09FE1CEC1A1F630E0092BBAF /* reflect.frag */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1011, 429}}";
+			sepNavSelRange = "{272, 0}";
+			sepNavVisRange = "{0, 272}";
+			sepNavWindowFrame = "{{15, 4}, {1045, 774}}";
+		};
+	};
+	09FE1CED1A1F63220092BBAF /* reflect.vs */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1011, 429}}";
+			sepNavSelRange = "{389, 0}";
+			sepNavVisRange = "{0, 389}";
+		};
+	};
+	09FE1CEF1A1F634C0092BBAF /* skybox.vs */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1011, 429}}";
+			sepNavSelRange = "{230, 0}";
+			sepNavVisRange = "{0, 230}";
+		};
+	};
+	09FE1CF01A1F63630092BBAF /* skybox.frag */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1011, 429}}";
+			sepNavSelRange = "{143, 0}";
+			sepNavVisRange = "{0, 143}";
+			sepNavWindowFrame = "{{15, 4}, {1045, 774}}";
+		};
+	};
+}

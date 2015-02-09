@@ -1,0 +1,38 @@
+#ifndef __MESH__
+#define __MESH__
+
+
+#include <vector>
+#include "Normal.h"
+#include "Point3D.h"
+
+using namespace std;
+
+// Face definition. This is the same for all files but is placed here to keep all the definitions together
+
+typedef struct Face {
+  	unsigned char nverts;    // number of vertex indices in list
+  	int* verts;              // vertex index list 
+} Face;
+
+class Mesh {
+public:
+	Mesh(void);
+	Mesh (char* filename); // read a mesh from a PLY file
+	~Mesh(void);
+
+	vector<Point3D> vertices;
+	vector<Normal> normals;
+	vector<Face*> faces;
+	vector<vector<int>> vertex_faces;
+	vector<float> u;
+	vector<float> v;
+	int num_vertices;
+	int num_triangles;
+
+	void read_ply_file (char* file_name);
+	void compute_vertex_normal ();
+};
+
+
+#endif

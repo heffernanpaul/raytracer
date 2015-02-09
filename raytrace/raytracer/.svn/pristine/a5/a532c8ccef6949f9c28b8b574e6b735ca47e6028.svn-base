@@ -1,0 +1,232 @@
+#include "Mesh.h"
+
+#include "ply.h"
+
+Mesh::Mesh(void) // default constructor: a triangle 
+{
+	vertices.push_back (Point3D (10,0,10));
+	vertices.push_back (Point3D (-10,0,10));
+	vertices.push_back (Point3D (10,0,-10));
+	//for (int i = 0 ;i<3;++i) indices.push_back (i);
+	vector<int> face0; 
+	for (int i = 0;i<3;++i) face0.push_back (i);
+	vertex_faces.push_back (face0);
+	num_vertices = 3;
+	num_triangles = 1;
+}
+
+Mesh::Mesh (char* filename) {
+	read_ply_file (filename);
+}
+
+
+Mesh::~Mesh(void)
+{
+}
+
+/*
+void Mesh::compute_vertex_normal () { 
+	normals.reserve(num_vertices);
+	
+	for (int index = 0; index < num_vertices; index++) {   // for each vertex
+		Normal normal;    // is zero at this point	
+			
+		//for (int j = 0; j < vertex_faces[index].size(); j++)
+		//	normal += objects[vertex_faces[index][j]]->get_normal();  
+	
+		// The following code attempts to avoid (nan, nan, nan) normalised normals when all components = 0
+		
+		if (normal.x == 0.0 && normal.y == 0.0 && normal.z == 0.0)
+			normal.y = 1.0;
+		else 
+			normal.normalize();     
+		
+		normals.push_back(normal);
+	}
+	
+	// erase the vertex_faces arrays because we have now finished with them
+	
+	for (int index = 0; index < num_vertices; index++)
+		for (int j = 0; j < vertex_faces[index].size(); j++)
+			vertex_faces[index].erase (vertex_faces[index].begin(), vertex_faces[index].end());
+	
+	vertex_faces.erase (vertex_faces.begin(), vertex_faces.end());
+}
+*/
+
+Normal compute_face_normal (Point3D p0, Point3D p1, Point3D p2, bool reverse_normal) {
+	Vector3D a = p1 - p0;
+	Vector3D b = p2 - p0;
+	Vector3D n = a^b;
+	n.normalize ();
+	return (reverse_normal)?(-n):n;
+}
+
+void Mesh::read_ply_file (char* file_name) {
+		// Vertex definition 
+	
+	typedef struct Vertex {
+	  float x,y,z;      // space coordinates       
+	} Vertex;
+	
+	
+		
+	// list of property information for a vertex
+	// this varies depending on what you are reading from the file
+
+	PlyProperty vert_props[] = {
+	  {"x", PLY_FLOAT, PLY_FLOAT, offsetof(Vertex,x), 0, 0, 0, 0},
+	  {"y", PLY_FLOAT, PLY_FLOAT, offsetof(Vertex,y), 0, 0, 0, 0},
+	  {"z", PLY_FLOAT, PLY_FLOAT, offsetof(Vertex,z), 0, 0, 0, 0}
+	};
+
+	// list of property information for a face. 
+	// there is a single property, which is a list
+	// this is the same for all files
+
+	PlyProperty face_props[] = { 
+	  	{"vertex_indices", PLY_INT, PLY_INT, offsetof(Face,verts),
+	   		1, PLY_UCHAR, PLY_UCHAR, offsetof(Face,nverts)}
+	};
+	
+	// local variables
+	
+	int 			i,j;
+  	PlyFile*		ply;
+  	int 			nelems;		// number of element types: 2 in our case - vertices and faces
+  	char**			elist;
+	int 			file_type;
+	float 			version;
+	int 			nprops;		// number of properties each element has
+	int 			num_elems;	// number of each type of element: number of vertices or number of faces
+	PlyProperty**	plist;
+	Vertex**		vlist;
+	Face**			flist;
+	char*			elem_name;
+	int				num_comments;
+	char**			comments;
+	int 			num_obj_info;
+	char**			obj_info;
+
+
+  	// open a ply file for reading
+  
+	ply = ply_open_for_reading(file_name, &nelems, &elist, &file_type, &version);
+	
+  	// print what we found out about the file
+  
+  	printf ("version %f\n", version);
+  	printf ("type %d\n", file_type);
+  	
+  	// go through each kind of element that we learned is in the file and read them 
+
+  	for (i = 0; i < nelems; i++) {  // there are only two elements in our files: vertices and faces
+	    // get the description of the first element 
+	    
+  	    elem_name = elist[i];
+	    plist = ply_get_element_description (ply, elem_name, &num_elems, &nprops);
+
+	    // print the name of the element, for debugging
+	    
+		//cout << "element name  " << elem_name << "  num elements = " << num_elems << "  num properties =  " << nprops << endl;
+
+	    // if we're on vertex elements, read in the properties
+    
+    	if (equal_strings ("vertex", elem_name)) {
+	      	// set up for getting vertex elements
+	      	// the three properties are the vertex coordinates
+	
+			ply_get_property (ply, elem_name, &vert_props[0]);
+	      	ply_get_property (ply, elem_name, &vert_props[1]);
+		  	ply_get_property (ply, elem_name, &vert_props[2]);
+		  	
+		  	// reserve mesh elements
+		  	
+		  	num_vertices = num_elems;
+		  	vertices.reserve(num_elems);
+
+		  	// grab all the vertex elements
+		  			  
+		  	for (j = 0; j < num_elems; j++) {
+				Vertex* vertex_ptr = new Vertex;
+
+		        // grab an element from the file
+		        
+				ply_get_element (ply, (void *) vertex_ptr);
+		  		vertices.push_back(Point3D(vertex_ptr->x, vertex_ptr->y, vertex_ptr->z));
+		  		delete vertex_ptr;
+		  	}
+    	}
+
+	    // if we're on face elements, read them in 
+	    
+	    if (equal_strings ("face", elem_name)) {
+		    // set up for getting face elements
+		
+			ply_get_property (ply, elem_name, &face_props[0]);   // only one property - a list
+			
+		  	num_triangles = num_elems;
+		  	
+		
+			// the following code stores the face numbers that are shared by each vertex
+		  	
+		  	vertex_faces.reserve(num_vertices);
+		  	vector<int> faceList;
+		  			  	
+		  	for (j = 0; j < num_vertices; j++) 
+		  		vertex_faces.push_back(faceList); // store empty lists so that we can use the [] notation below
+		  			
+			// grab all the face elements
+			for (int i = 0;i<num_vertices;++i)
+				normals.push_back (Normal ());
+			vector<int> count;
+			for (int i = 0;i<num_vertices;++i) 
+				count.push_back (0); // count the number of adjecent faces of a vertex
+					      
+			for (j = 0; j < num_elems; j++) {
+			    // grab an element from the file 
+			    
+			    Face* face_ptr = new Face;
+			    
+			    ply_get_element (ply, (void *) face_ptr);
+				Normal n = compute_face_normal (vertices[face_ptr->verts[0]], vertices[face_ptr->verts[1]], vertices[face_ptr->verts[2]],false);
+				for (int k = 0;k<3;++k) {
+					normals[face_ptr->verts[k]] +=n; // add normal to vertex's normal
+					count[face_ptr->verts[k]]++;
+				}
+
+
+				faces.push_back (face_ptr);
+			}
+
+			// now we can divide each vertex's normal to the number of adjecent faces to get the average normal
+			for (int i = 0;i<num_vertices;++i) 
+				normals[i] = normals[i] * (1.0f/count[i]);
+
+	    }
+    
+	    // print out the properties we got, for debugging
+	    
+	    for (j = 0; j < nprops; j++)
+	    	printf ("property %s\n", plist[j]->name);
+	}  // end of for (i = 0; i < nelems; i++) 
+
+
+	// grab and print out the comments in the file
+	  
+	comments = ply_get_comments (ply, &num_comments);
+	  
+	for (i = 0; i < num_comments; i++)
+	    printf ("comment = '%s'\n", comments[i]);
+
+	// grab and print out the object information
+	  
+	obj_info = ply_get_obj_info (ply, &num_obj_info);
+	  
+	for (i = 0; i < num_obj_info; i++)
+	    printf ("obj_info = '%s'\n", obj_info[i]);
+
+	// close the ply file 
+	  
+	ply_close (ply);
+}

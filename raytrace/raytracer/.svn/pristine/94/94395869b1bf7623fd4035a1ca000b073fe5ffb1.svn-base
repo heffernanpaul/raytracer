@@ -1,0 +1,335 @@
+#include <cstdlib>
+#include <algorithm>
+#include <stack>
+
+#include "KdTree.h"
+#include "Constants.h"
+#include "World.h"
+
+using namespace std;
+
+
+BBox KdTreeNode::get_bounding_box () const {
+	return bbox;
+}
+
+void KdTreeNode::clip_plane (double& t_mid) {
+	switch (splitAxis) {
+		case X_AXIS: {
+										
+		}
+		case Y_AXIS: {
+
+		}
+		case Z_AXIS: {
+		
+		}
+	}
+}
+
+bool KdTreeNode::hit(const Ray& ray, double tmin, double tmax, double& t_hit, ShadeRec& sr) const {
+	Normal		normal;
+	Point3D		local_hit_point;
+	
+	double t = kEpsilon;
+	t_hit = tmax;
+	bool hit = false;
+
+	int num_objs = objList.size ();
+	for (int i = 0;i<num_objs;++i) 
+		if (objList[i]->hit (ray,t,sr) && t >= tmin && t < t_hit) {
+			hit				= true;
+			t_hit			= t;
+			sr.material_ptr	= objList[i]->get_material();	// lhs is GeometricObject::material_ptr
+			normal			= sr.normal;
+			sr.hit_point	= ray.o + ray.d*t;
+			sr.hit_an_object= true;
+			local_hit_point	= sr.local_hit_point;  
+		}
+
+	if (hit) {
+		sr.t				= t_hit;
+		sr.normal 			= normal;   
+		sr.local_hit_point 	= local_hit_point;  
+	}
+	return hit;
+}
+
+KdTree::KdTree(void):
+	root_ptr (NULL)
+{
+}
+
+
+KdTree::~KdTree(void)
+{
+}
+
+void KdTree::build_tree (KdTreeNode* aNode, int depth) {
+	if (aNode->objList.size () == 0 || depth == MAX_KD_TREE_DEPTH) {
+		aNode->isLeaf = true;
+		return;
+	}
+	BBox bb= aNode->get_bounding_box ();
+	double x_min = bb.x0, y_min = bb.y0, z_min = bb.z0, x_max = bb.x1, y_max = bb.y1, z_max = bb.z1;
+	double xx = abs (x_max - x_min);
+	double yy = abs (y_max - y_min);
+	double zz = abs (z_max - z_min);
+	if (xx > yy) {
+		if (xx > zz) {
+			aNode->splitPlane = (x_max + x_min) / 2;
+			aNode->splitAxis = X_AXIS;
+			aNode->left_ptr = new KdTreeNode;
+			aNode->right_ptr = new KdTreeNode;
+			for (int i = 0;i<aNode->objList.size ();++i) {
+				if (aNode->objList[i]->intersect (x_min,y_min,z_min, aNode->splitPlane,y_max,z_max)) {
+					aNode->left_ptr->objList.push_back (aNode->objList[i]);
+				}
+				if (aNode->objList[i]->intersect (aNode->splitPlane,y_min,z_min, x_max,y_max,z_max)) {
+					aNode->right_ptr->objList.push_back (aNode->objList[i]);
+				}
+			}
+		}
+		else {
+			aNode->splitPlane = (z_max + z_min) / 2;
+			aNode->splitAxis = Z_AXIS;
+			aNode->left_ptr = new KdTreeNode;
+			aNode->right_ptr = new KdTreeNode;
+			for (int i = 0;i<aNode->objList.size ();++i) {
+				if (aNode->objList[i]->intersect (x_min,y_min,z_min,x_max,y_max,aNode->splitPlane)) {
+					aNode->left_ptr->objList.push_back (aNode->objList[i]);
+				}
+				if (aNode->objList[i]->intersect (x_min,y_min,aNode->splitPlane,x_max,y_max,z_max)) {
+					aNode->right_ptr->objList.push_back (aNode->objList[i]);
+				}
+			}
+		}
+	}
+	else if (yy > zz) {
+		aNode->splitPlane = (y_max + y_min) / 2;
+		aNode->splitAxis = Y_AXIS;
+		aNode->left_ptr = new KdTreeNode;
+		aNode->right_ptr = new KdTreeNode;
+		for (int i = 0;i<aNode->objList.size ();++i) {
+			if (aNode->objList[i]->intersect (x_min,y_min, z_min, x_max,aNode->splitPlane,z_max)) {
+				aNode->left_ptr->objList.push_back (aNode->objList[i]);
+			}
+			if (aNode->objList[i]->intersect (x_min,aNode->splitPlane, z_min, x_max,y_max,z_max)) {
+				aNode->right_ptr->objList.push_back (aNode->objList[i]);
+			}
+		}
+			
+	} else {
+		aNode->splitPlane = (z_max + z_min) / 2;
+		aNode->splitAxis = Z_AXIS;
+		aNode->left_ptr = new KdTreeNode;
+		aNode->right_ptr = new KdTreeNode;
+		for (int i = 0;i<aNode->objList.size ();++i) {
+			if (aNode->objList[i]->intersect (x_min,y_min,z_min, x_max,y_max,aNode->splitPlane)) {
+				aNode->left_ptr->objList.push_back (aNode->objList[i]);
+			}
+			if (aNode->objList[i]->intersect (x_min,y_min,aNode->splitPlane, x_max,y_max,z_max)) {
+				aNode->right_ptr->objList.push_back (aNode->objList[i]);
+			}
+		}
+			
+	}
+	build_tree (aNode->get_left (), depth+1);
+	build_tree (aNode->get_right (), depth+1);
+}
+
+void KdTree::build (const World& w) {
+	root_ptr = new KdTreeNode;
+	int num_objs = w.objects.size ();
+	double x_min,y_min,z_min,x_max,y_max,z_max;
+	x_min = y_min = z_min = kHugeValue;
+	x_max = y_max = z_max = -kHugeValue;
+	
+	for (int i = 0;i<num_objs;++i) {
+		BBox bb = w.objects[i]->get_bounding_box ();
+		x_min = min (x_min,bb.x0);
+		y_min = min (y_min,bb.y0);
+		z_min = min (z_min,bb.z0);
+		x_max = max (x_max,bb.x1);
+		y_max = max (y_max,bb.y1);
+		z_max = max (y_max,bb.z1);
+		root_ptr->objList.push_back (w.objects[i]);
+	}
+	root_ptr->bbox = BBox (x_min,x_max,y_min,y_max,z_min,z_max);
+	build_tree (root_ptr, 0);
+}
+
+float compute_t_split_plane (const Ray& ray, float split_plane, int split_axis, double tmin, double tmax) {
+	switch (split_axis) {
+		case X_AXIS: {
+			if (ray.d.x == 0) {
+				if (ray.o.x < split_plane) return -kHugeValue;  // ray is completely inside left child
+				else return kHugeValue; // ray is completely inside right child
+			}
+			else {
+				double temp = (split_axis - ray.o.x) / ray.d.x;
+				if (tmin <= temp && temp <= tmax) return temp;
+				else {
+					double x_min = ray.o.x + ray.d.x*tmin;
+					double x_max = ray.o.x + ray.d.x*tmax;
+					return (x_min<=split_plane && x_max<=split_plane?-kEpsilon:kEpsilon);
+				}
+			}
+		}
+		case Y_AXIS: {
+			if (ray.d.y == 0) {
+				if (ray.o.y < split_plane) return -kHugeValue;  // ray is completely inside left child
+				else return kHugeValue; // ray is completely inside right child
+			}
+			else {
+				double temp = (split_axis - ray.o.y) / ray.d.y;
+				if (tmin <= temp && temp <= tmax) return temp;
+				else {
+					double y_min = ray.o.y + ray.d.y*tmin;
+					double y_max = ray.o.y + ray.d.y*tmax;
+					return (y_min<=split_plane && y_max<=split_plane?-kEpsilon:kEpsilon);
+				}
+			}
+		}
+		case Z_AXIS: {
+			if (ray.d.z == 0) {
+				if (ray.o.z< split_plane) return -kHugeValue;  // ray is completely inside left child
+				else return kHugeValue; // ray is completely inside right child
+			}
+			else {
+				double temp = (split_axis - ray.o.z) / ray.d.z;
+				if (tmin <= temp && temp <= tmax) return temp;
+				else {
+					double z_min = ray.o.z + ray.d.z*tmin;
+					double z_max = ray.o.z+ ray.d.z*tmax;
+					return (z_min<=split_plane && z_max<=split_plane?-kEpsilon:kEpsilon);
+				}
+			}
+		}
+	}
+}
+
+
+bool KdTree::hit(const Ray& ray, double& t_hit, ShadeRec& sr) const {
+	// determine the tmin & tmax of the voxel
+	BBox bb = root_ptr->get_bounding_box ();
+	double x0 = bb.x0, y0 = bb.y0, z0 = bb.z0;
+	double x1 = bb.x1, y1 = bb.y1, z1 = bb.z1;
+	double tmin, tmax;
+	double ox = ray.o.x; double oy = ray.o.y; double oz = ray.o.z;
+	double dx = ray.d.x; double dy = ray.d.y; double dz = ray.d.z;
+	
+	double tx_min, ty_min, tz_min;
+	double tx_max, ty_max, tz_max;
+	tx_min = ty_min = tz_min = kEpsilon;
+	tx_max = ty_max = tz_max = kHugeValue;
+	
+	if (abs (dx) > kEpsilon) {
+		double a = 1.0 / dx;
+		if (a >= 0) {
+			tx_min = (x0 - ox) * a;
+			tx_max = (x1 - ox) * a;
+		}
+		else {
+			tx_min = (x1 - ox) * a;
+			tx_max = (x0 - ox) * a;
+		}
+	}
+	
+	if (abs (dy) > kEpsilon) {
+		double b = 1.0 / dy;
+		if (b >= 0) {
+			ty_min = (y0 - oy) * b;
+			ty_max = (y1 - oy) * b;
+		}
+		else {
+			ty_min = (y1 - oy) * b;
+			ty_max = (y0 - oy) * b;
+		}
+	}
+	if (abs (dz) > kEpsilon) {
+		double c = 1.0 / dz;
+		if (c >= 0) {
+			tz_min = (z0 - oz) * c;
+			tz_max = (z1 - oz) * c;
+		}
+		else {
+			tz_min = (z1 - oz) * c;
+			tz_max = (z0 - oz) * c;
+		}
+	}
+	
+	
+	if (tx_min > ty_min) 
+		tmin = tx_min;
+	else 
+		tmin = ty_min;
+	
+	if (tz_min > tmin) 
+		tmin = tz_min;	
+		
+		
+	// find smallest exiting t value
+	if (tx_max < ty_max) 
+		tmax = tx_max;
+	else 
+		tmax = ty_max;
+		
+		
+	if (tz_max < tmax) 
+		tmax = tz_max;
+
+	if (tmin > tmax) return false;  // miss
+	
+	stack<KdTreeNode*> sta;  // stack to traverse the tree non-recursively
+	sta.push (root_ptr);
+	stack<double> sta_t; // stack to store the tmin& tmax value of each node
+	sta_t.push (tmin); 
+	sta_t.push (tmax);
+
+	while (!sta.empty ()) {
+		KdTreeNode* aNode = sta.top (); sta.pop ();
+		float cur_tmax = sta_t.top (); sta_t.pop ();
+		float cur_tmin = sta_t.top (); sta_t.pop ();
+		if (aNode->isLeaf) {
+			bool temp = aNode->hit (ray, cur_tmin, cur_tmax, t_hit, sr);
+			if (temp) return true;
+		}
+		else {
+			float t_split_plane = compute_t_split_plane (ray, aNode->splitPlane, aNode->splitAxis,cur_tmin, cur_tmax); 
+			if (t_split_plane == -kHugeValue) {
+				sta.push (aNode->get_left ());
+				sta_t.push (cur_tmin);
+				sta_t.push (cur_tmax);
+			}
+			else if (t_split_plane == kHugeValue) {
+				sta.push (aNode->get_right ());
+				sta_t.push (cur_tmin);
+				sta_t.push (cur_tmax);
+			}
+			else if (cur_tmin<=t_split_plane && t_split_plane>=cur_tmax) {
+				sta.push (aNode->get_left ());
+				sta.push (aNode->get_right ());
+				sta_t.push (cur_tmin);
+				sta_t.push (t_split_plane);
+				sta_t.push (t_split_plane);
+				sta_t.push (cur_tmax);
+			}
+			else {
+				if (t_split_plane == -kHugeValue) {
+					sta.push (aNode->get_left ());
+					sta_t.push (cur_tmin);
+					sta_t.push (cur_tmax);
+				}
+				else {
+					sta.push (aNode->get_right ());
+					sta_t.push (cur_tmin);
+					sta_t.push (cur_tmax);
+				}
+			}
+			
+		}
+	}
+	
+	return false;
+}

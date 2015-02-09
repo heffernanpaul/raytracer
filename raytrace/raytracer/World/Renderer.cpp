@@ -1,0 +1,22 @@
+#include "Renderer.h"
+#include "Constants.h"
+
+Renderer::Renderer(void):
+	vp (),
+	background_color (black),
+	ray_obj_accel (RAY_OBJ_EXHAUSTIVE),
+	max_ray_tracing_depth (0),
+	render_shadow (true),
+	tracer_ptr (NULL),
+ render_option (PATH_TRACING),
+//render_option (DIRECT_DIFFUSE),
+	grid_ptr (NULL),
+	kd_tree_ptr (NULL),
+	nested_grid_ptr (NULL)
+{
+}
+
+
+Renderer::~Renderer(void)
+{
+}
