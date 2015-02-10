@@ -8,28 +8,29 @@
  */
 
 #include <iostream>
-#include <chrono>
 
 #include "Image.h"
+#include "Camera.h"
+#include "Tracer.h"
+#include "ViewPlane.h"
+#include "Timing.h"
 
-void createImage(short width, short height, TGAImage* img) {
-	RGBColor c;
-			//c.a = 255;
-	//Loop through image and set all pixels to red
-		for(int y=0; y<width; y++)
-		{
-	      c.g = y % 256;  
-	for(int x=0; x<width; x++)
-		{
-	      c.r = x % 256; 
-	      c.b = (x * y) % 256;  
-			img->setPixel(c,x,y);
-		}
-	}
 
-}
 
-int main(int argc, char **argv)
+int main(int argc, char** argv) {
+
+	ViewPlane vp(800, 800);
+	Camera camera(Point3D(0,0, -100), 100);
+	Tracer tracer;
+	World world;
+	
+	TGAImage* img = tracer.render(camera, vp, world);
+
+	string filename = "test.tga";
+	img->WriteImage(filename);
+
+}	
+/*int main2(int argc, char **argv)
 {
 	
 	//declare image
@@ -42,10 +43,10 @@ int main(int argc, char **argv)
 		createImage(width, height, img);
 	}
 
-	auto start = chrono::monotonic_clock::now();
+	auto start = GetTime();
 	createImage(width, height, img);
 
-	auto end = chrono::monotonic_clock::now();
+	auto end = GetTime();
 	auto diff = end - start;
 	cout << chrono::duration <double, milli> (diff).count() << " ms" << endl;
 
@@ -55,3 +56,4 @@ int main(int argc, char **argv)
 	
 	return 0;	
 }
+*/

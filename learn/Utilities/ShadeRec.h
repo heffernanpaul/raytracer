@@ -41,6 +41,7 @@ class ShadeRec {
 //    GeometricObject*    obj_ptr;
     
 //		ShadeRec(World& wr);					// constructor
+		ShadeRec(void) {};
 		ShadeRec(const ShadeRec& sr);			// copy constructor
 		~ShadeRec(void);						// destructor
 };

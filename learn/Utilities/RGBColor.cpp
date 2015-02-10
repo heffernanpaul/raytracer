@@ -10,6 +10,10 @@
 
 #include "RGBColor.h"
 
+
+
+RGBColor RGBColor::black(0,0,0);
+
 // -------------------------------------------------------- default constructor
 
 RGBColor::RGBColor(void)

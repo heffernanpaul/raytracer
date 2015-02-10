@@ -10,7 +10,7 @@ endif
 
 
 #CXXFLAGS := -std=c++11 -DDEBUG -g $(WXINCLUDES) $(INCLUDES) -MMD
-INCLUDES := -I./Utilities
+INCLUDES := -IUtilities -ICameras -ITracers -IWorld -I.
 
 all: test
 

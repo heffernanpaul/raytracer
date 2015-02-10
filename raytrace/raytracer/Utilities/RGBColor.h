@@ -17,7 +17,7 @@ class RGBColor {
 		float	r, g, b;									
 				
 	public:
-	
+
 		RGBColor(void);										// default constructor
 		RGBColor(float c);									// constructor
 		RGBColor(float _r, float _g, float _b);				// constructor
