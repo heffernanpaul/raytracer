@@ -42,10 +42,10 @@ int main(int argc, char **argv)
 		createImage(width, height, img);
 	}
 
-	auto start = chrono::steady_clock::now();
+	auto start = chrono::monotonic_clock::now();
 	createImage(width, height, img);
 
-	auto end = chrono::steady_clock::now();
+	auto end = chrono::monotonic_clock::now();
 	auto diff = end - start;
 	cout << chrono::duration <double, milli> (diff).count() << " ms" << endl;
 
@@ -53,9 +53,5 @@ int main(int argc, char **argv)
 	string filename = "test.tga";
 	img->WriteImage(filename);
 	
-
-	string command = "open " + filename;
-system(command.c_str());
-
 	return 0;	
 }
