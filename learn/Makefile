@@ -4,25 +4,29 @@ ifeq ($(UNAME), Linux)
 CXXFLAGS := -std=c++0x $(WXINCLUDES) $(INCLUDES) -MMD
 CXX=g++
 else
-CXXFLAGS := -std=c++11 $(WXINCLUDES) $(INCLUDES) -MMD
+#CXXFLAGS := -std=c++11 $(WXINCLUDES) $(INCLUDES) -MMD
 CXX=clang++
 endif
 
 
-#CXXFLAGS := -std=c++11 -DDEBUG -g $(WXINCLUDES) $(INCLUDES) -MMD
-INCLUDES := -IUtilities -ICameras -ITracers -IWorld -I.
+INCLUDES := -Isrc/Utilities -Isrc/Cameras -Isrc/Tracers -Isrc/World -Isrc/BRDFs
+INCLUDES += -Isrc -Isrc/GeometricObjects -Isrc/Materials -Isrc/Lights
+CXXFLAGS := -std=c++11 -DDEBUG -g $(WXINCLUDES) $(INCLUDES) -MMD
 
 all: test
 
-SRCS := $(wildcard *.c*)
-SRCS += $(wildcard */*.c*)
+SRCS := $(wildcard src/*.c*)
+SRCS += $(wildcard src/*/*.c*)
 OBJS=$(subst .cpp,.o,$(SRCS))
 
 DEPS = $(SRCS:.cpp=.d)
 
 #-include $(DEPS)
-test: $(SRCS)
-	$(CXX) $(CXXFLAGS) $(INCLUDES) -o test $(SRCS)
+#test: $(SRCS)
+#	$(CXX) $(CXXFLAGS) $(INCLUDES) -o test $(SRCS)
+
+test: $(OBJS)
+	clang++ $(CXXFLAGS) $(LIBRARIES) -o test $(OBJS)
 
 clean:
 	$(RM) $(OBJS) $(DEP)
