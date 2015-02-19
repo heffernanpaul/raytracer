@@ -17,5 +17,6 @@ public:
 	 center(centerIn), radius(radiusIn) {};
 
 	virtual bool hit(const Ray& ray, float& t, ShadeRec& s) const;	
+    virtual void calcUV(ShadeRec& s) const;
 
 };

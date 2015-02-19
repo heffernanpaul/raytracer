@@ -21,4 +21,11 @@ public:
     RGBColor L(const ShadeRec& sr) {
         return (ls * color);
     }
+    
+    
+    virtual bool
+    in_shadow(const Ray& ray, ShadeRec& sr) const {
+        float tmin = (origin-ray.o).length();
+        return sr.w.hit_objects(ray, sr) && sr.t < tmin;
+    }
 };

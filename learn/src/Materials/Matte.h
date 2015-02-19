@@ -40,6 +40,7 @@ public:
     
     
     virtual RGBColor shade(ShadeRec& sr) const;
+    virtual RGBColor area_light_shade(ShadeRec& sr) const;
 };
 
 

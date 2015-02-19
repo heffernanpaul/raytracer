@@ -37,3 +37,9 @@ bool Sphere::hit(const Ray& ray, float& tmin, ShadeRec& sr) const {
 	
 	return (false);
 }
+
+void Sphere::calcUV(ShadeRec& sr) const {
+    sr.u = sr.normal * Vector3D(-1,0,0);
+    sr.v = sr.normal * Vector3D(0,1,0);
+}
+

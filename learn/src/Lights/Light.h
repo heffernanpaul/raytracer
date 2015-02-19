@@ -19,5 +19,7 @@ public:
 	virtual void getDirection(const Point3D& point, Vector3D& direction) const = 0;
 
     virtual RGBColor L(const ShadeRec& sr) = 0;
+    virtual bool casts_shadows() { return true; }
+    virtual bool in_shadow (const Ray& ray, ShadeRec& sr) const=0; //shadow test
 
 };

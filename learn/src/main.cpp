@@ -19,7 +19,7 @@
 
 int main(int argc, char** argv) {
 
-	ViewPlane vp(800, 800);
+	ViewPlane vp(800, 800, 1);
 	Camera camera(Point3D(0 ,0, -100), 300);
 	Tracer tracer;
 	World world;
