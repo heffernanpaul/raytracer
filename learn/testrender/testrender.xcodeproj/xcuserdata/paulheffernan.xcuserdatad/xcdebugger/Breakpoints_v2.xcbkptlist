@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/World/World.cpp"
-            timestampString = "445866011.545326"
+            timestampString = "446174884.827394"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "World::World()"
             landmarkType = "5">
          </BreakpointContent>
@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/World/World.cpp"
-            timestampString = "445866011.545326"
+            timestampString = "446174884.827394"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
             landmarkName = "World::hit_objects(const Ray&amp; ray, ShadeRec&amp; sr)"
             landmarkType = "5">
          </BreakpointContent>
@@ -170,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/World/World.cpp"
-            timestampString = "445947354.986426"
+            timestampString = "446174884.827394"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "World::World()"
             landmarkType = "5">
          </BreakpointContent>
@@ -218,7 +218,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/Tracers/Tracer.cpp"
-            timestampString = "445951467.438893"
+            timestampString = "446184604.361761"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "Tracer::render(const Camera&amp; camera, const ViewPlane&amp; vp, const World&amp; world)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/Tracers/Tracer.cpp"
+            timestampString = "446184604.361761"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "48"
@@ -233,13 +249,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../src/Tracers/Tracer.cpp"
-            timestampString = "445951490.458976"
+            filePath = "../src/GeometricObjects/Sphere.cpp"
+            timestampString = "446184877.438242"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "Tracer::render(const Camera&amp; camera, const ViewPlane&amp; vp, const World&amp; world)"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "Sphere::calcUV(ShadeRec&amp; sr)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -249,13 +265,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../src/Tracers/Tracer.cpp"
-            timestampString = "445951494.07697"
+            filePath = "../src/Materials/Emissive.cpp"
+            timestampString = "446174918.964297"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "Tracer::render(const Camera&amp; camera, const ViewPlane&amp; vp, const World&amp; world)"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "Emissive::shade (ShadeRec&amp; sr)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -266,12 +282,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/GeometricObjects/Sphere.cpp"
-            timestampString = "445951502.363857"
+            timestampString = "446186002.00444"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "Sphere::calcUV(ShadeRec&amp; sr)"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "Sphere::hit(const Ray&amp; ray, float&amp; tmin, ShadeRec&amp; sr)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/GeometricObjects/Sphere.cpp"
+            timestampString = "446186003.64149"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "Sphere::hit(const Ray&amp; ray, float&amp; tmin, ShadeRec&amp; sr)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/Materials/Emissive.cpp"
+            timestampString = "446204152.041718"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "Emissive::area_light_shade(ShadeRec&amp; sr)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

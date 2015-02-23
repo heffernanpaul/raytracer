@@ -24,7 +24,11 @@ int main(int argc, char** argv) {
 	Tracer tracer;
 	World world;
 	
-    TGAImage* img = tracer.render(camera, vp, world);
+    int numIterations = 1;
+    TGAImage* img;
+    for (int i = 0; i < numIterations; i++) {
+        img= tracer.render(camera, vp, world);
+    }
 	string filename = "test.tga";
 	img->WriteImage(filename);
 

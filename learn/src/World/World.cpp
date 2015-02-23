@@ -1,6 +1,7 @@
 #include "World.h"
 #include "Material.h"
 #include "Matte.h"
+#include "Emissive.h"
 #include "Sphere.h"
 #include "Box.h"
 #include "OpenCylinder.h"
@@ -36,22 +37,22 @@ World::World() {
 	Material* redMatte = new Matte(1.0, 3.0, RGBColor(1.0, .4, .4));
 	Material* yellowMatte = new Matte(1.0, 3.0, RGBColor(1.0, 1.0, .4));
 	Material* pinkMatte = new Matte(1.5, 9.0, RGBColor(0.6, .2, .6));
-	Material* brownMatte = new Matte(1.0, 3.0, RGBColor(.4, .4, .1));
+	Material* whiteEmissive = new Emissive(1.0, RGBColor(1.0, 1.0, 0.7));
 	Material* blueMatte = new Matte(1.0, 3.0, RGBColor(.4, .4, 1.0));
     Material* grassMatte = new Matte(1.0, 3.0, RGBColor(0.4, .8, .3));
 
     // Balls
 	objects.push_back(new Sphere(Point3D(-100,  0,100), 20, *redMatte));
-	objects.push_back(new Sphere(Point3D(-50,   0,100), 20, *yellowMatte));
+    objects.push_back(new Sphere(Point3D(-50,   0,100), 20, *yellowMatte));
 	objects.push_back(new Sphere(Point3D(0,     0,70), 20, *pinkMatte));
 	objects.push_back(new Sphere(Point3D(50,    0,100), 20, *blueMatte));
-	objects.push_back(new Sphere(Point3D(100,   0,100), 20, *redMatte));
 
-    objects.push_back(new OpenCylinder(*redMatte, -10, -10, 10));
+//    objects.push_back(new OpenCylinder(*redMatte, -10, -10, 10));
 
     // Planes
     objects.push_back(new Plane(Point3D(0,0,880), Normal(0,0,-1), *blueMatte));
     objects.push_back(new Plane(Point3D(0,-20,0), Normal(0,1,0), *grassMatte));
+    objects.push_back(new Sphere(Point3D(100,   100,80), 20, *whiteEmissive));
     
     // Lights
     lights.push_back(new PointLight(RGBColor(0.8, 0.8, 0.8), Point3D(30, 30, 30), 0.4));

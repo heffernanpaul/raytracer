@@ -5,11 +5,11 @@ const float Sphere::kEpsilon = 0.001f;
 
 bool Sphere::hit(const Ray& ray, float& tmin, ShadeRec& sr) const {
 	float 		t;
-	Vector3D	temp 	= ray.o - center;
-	float 		a 		= ray.d * ray.d;
-	float 		b 		= 2.0 * (temp * ray.d);
+    Vector3D	temp 	= ray.o - center;       // Once Sphere per rendering
+	float 		a 		= ray.d * ray.d;        // Once per pixel
+	float 		b 		= 2.0 * (temp * ray.d); // Once per pixel per Sphere per rendering
 	float 		c 		= temp * temp - radius * radius;
-	float 		disc	= b * b - 4.0f * a * c;
+    float 		disc	= b * b - 4.0f * a * c;// Once Sphere per rendering
 
 	if (disc < 0.0)
 		return(false);

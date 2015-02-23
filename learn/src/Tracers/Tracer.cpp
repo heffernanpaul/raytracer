@@ -38,7 +38,6 @@ TGAImage* Tracer::render(const Camera& camera, const ViewPlane& vp, const World&
                     pp.x = (c - (0.5f * vp.getHRes()) + (q + 0.5f) / n);
                     pp.y = (r - (0.5f * vp.getVRes()) + (p + 0.5f) / n);
 
-//                    pp.x = c - halfWidth;
                     camera.getDirection(pp, ray.d);
 
                     // does this ray Hit an object
@@ -46,7 +45,6 @@ TGAImage* Tracer::render(const Camera& camera, const ViewPlane& vp, const World&
 
                     if (hit_an_object) {
                         sr.depth = depth;
-//                        sr.obj->calcUV(sr);
                         rgb += sr.obj->getMaterial().area_light_shade(sr);
 
                     } else {

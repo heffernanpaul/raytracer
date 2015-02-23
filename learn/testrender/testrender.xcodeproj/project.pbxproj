@@ -48,6 +48,7 @@
 		099268131A90C035008C1943 /* Vector3D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 099267EC1A90C035008C1943 /* Vector3D.cpp */; };
 		099268141A90C035008C1943 /* Vector3D.d in Sources */ = {isa = PBXBuildFile; fileRef = 099267ED1A90C035008C1943 /* Vector3D.d */; };
 		099268151A90C035008C1943 /* World.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 099267F11A90C035008C1943 /* World.cpp */; };
+		09F6E5EF1A981038001AF1C4 /* Emissive.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 09F6E5ED1A981038001AF1C4 /* Emissive.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -195,6 +196,8 @@
 		099267F01A90C035008C1943 /* ViewPlane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewPlane.h; sourceTree = "<group>"; };
 		099267F11A90C035008C1943 /* World.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = World.cpp; sourceTree = "<group>"; };
 		099267F21A90C035008C1943 /* World.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = World.h; sourceTree = "<group>"; };
+		09F6E5ED1A981038001AF1C4 /* Emissive.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Emissive.cpp; sourceTree = "<group>"; };
+		09F6E5EE1A981038001AF1C4 /* Emissive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Emissive.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,6 +283,8 @@
 				099267911A90A2FF008C1943 /* Material.cpp */,
 				099267931A90A34D008C1943 /* Matte.cpp */,
 				099267941A90A34D008C1943 /* Matte.h */,
+				09F6E5ED1A981038001AF1C4 /* Emissive.cpp */,
+				09F6E5EE1A981038001AF1C4 /* Emissive.h */,
 			);
 			path = Materials;
 			sourceTree = "<group>";
@@ -617,6 +622,7 @@
 				0992680E1A90C035008C1943 /* RGBColor.cpp in Sources */,
 				0992680A1A90C035008C1943 /* Point3D.cpp in Sources */,
 				099268151A90C035008C1943 /* World.cpp in Sources */,
+				09F6E5EF1A981038001AF1C4 /* Emissive.cpp in Sources */,
 				0992679B1A90A6DE008C1943 /* BRDF.cpp in Sources */,
 				0992679C1A90A6DE008C1943 /* Lambertian.cpp in Sources */,
 				099268031A90C035008C1943 /* Matrix.d in Sources */,

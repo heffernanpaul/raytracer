@@ -78,6 +78,9 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
+      <PathRunnable
+         FilePath = "/Users/paulheffernan/Projects/xcode/open.gl/src/learn/test">
+      </PathRunnable>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
