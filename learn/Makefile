@@ -2,7 +2,7 @@ V=0
 UNAME := $(shell uname)
 
 INCLUDES := -Isrc/Utilities -Isrc/Cameras -Isrc/Tracers -Isrc/World -Isrc/BRDFs
-INCLUDES += -Isrc -Isrc/GeometricObjects -Isrc/Materials -Isrc/Lights
+INCLUDES += -Isrc -Isrc/GeometricObjects -Isrc/Materials -Isrc/Lights -Isrc/Samplers
 
 ifeq ($(UNAME), Linux)
 CXXFLAGS := -std=c++0x $(WXINCLUDES) $(INCLUDES) -MMD
@@ -11,7 +11,7 @@ else
 #CXXFLAGS := -std=c++11 $(WXINCLUDES) $(INCLUDES) -MMD
 #CXXFLAGS := -std=c++11 -DDEBUG -g $(WXINCLUDES) $(INCLUDES) -MMD -o
 CXXFLAGS := -std=c++11 -DDEBUG -g $(WXINCLUDES) $(INCLUDES) -MMD -Ofast -msse3
-#CXXFLAGS := -std=c++11 $(WXINCLUDES) $(INCLUDES) -MMD
+#CXXFLAGS := -std=c++11 -DDEBUG -g $(WXINCLUDES) $(INCLUDES) -MMD
 CXX=clang++
 endif
 

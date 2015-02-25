@@ -26,6 +26,9 @@ TGAImage* Tracer::render(const Camera& camera, const ViewPlane& vp, const World&
 	// for each Row
 	for(int r=0; r<vp.getVRes(); r++)
 	{
+        if (r%10 == 0) {
+            std::cout << "Tracing row " << r << " of " << vp.getVRes() << std::endl;
+        }
 		pp.y = r - halfHeight;
 
 		// for each pixel in row

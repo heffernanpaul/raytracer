@@ -3,12 +3,14 @@
 #include <vector>
 #include "ShadeRec.h"
 #include "Light.h"
+#include "Sampler.h"
 #include "GeometricObject.h"
 
 class World {
 
 	std::vector<GeometricObject*> objects;
 	std::vector<Light*> lights;
+    Sampler* sampler_ptr;
 
 public:
 	World();

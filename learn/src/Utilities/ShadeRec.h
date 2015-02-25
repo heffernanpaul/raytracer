@@ -27,7 +27,7 @@ class ShadeRec {
 	public:
 	
 		bool				hit_an_object;		// did the ray hit an object?
-		Point3D 			hit_point;			// world coordinates of intersection
+		//Point3D 			hit_point;			// world coordinates of intersection
 		Point3D				local_hit_point;	// world coordinates of hit point on untransformed object (used for texture transformations)
 		Normal				normal;				// normal at hit point
 		Ray					ray;				// required for specular highlights and area lights

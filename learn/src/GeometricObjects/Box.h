@@ -13,5 +13,6 @@ public:
 	virtual bool shadow_hit(const Ray& ray, float& t) const;
 protected:
 	float x0, x1, y0, y1, z0, z1;
+    virtual void get_normal(const Point3D& p, Normal& normal) {};
 };
 

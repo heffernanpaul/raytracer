@@ -16,10 +16,19 @@ public:
 	const RGBColor& getColor() const {
 		return color;
 	}
-	virtual void getDirection(const Point3D& point, Vector3D& direction) const = 0;
+	virtual void getDirection(const Point3D& point, Vector3D& direction) = 0;
 
     virtual RGBColor L(const ShadeRec& sr) = 0;
     virtual bool casts_shadows() { return true; }
     virtual bool in_shadow (const Ray& ray, ShadeRec& sr) const=0; //shadow test
+    virtual float G(const ShadeRec& sr) const;
+    
+    virtual float pdf(const ShadeRec& sr) const;
+    
 
 };
+
+inline float Light::G(const ShadeRec& sr) const { return 0;}
+
+inline float Light::pdf(const ShadeRec& sr) const { return 0;}
+

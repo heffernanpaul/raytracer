@@ -12,6 +12,7 @@ Normal Box::get_normal (const int face_hit) const {
 			case 3: return Normal (1,0,0); // +x 
 			case 4: return Normal (0,1,0); // +y
 			case 5: return Normal (0,0,1); // +z
+            default:return Normal (0,0,1);
 		}
 }
 

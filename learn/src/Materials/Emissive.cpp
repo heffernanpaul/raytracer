@@ -15,7 +15,7 @@ RGBColor Emissive::shade (ShadeRec& sr) const {
         return (RGBColor::black);
 }
 
-RGBColor Emissive::get_Le () const {
+RGBColor Emissive::getLe () const {
     return ls*ce;
 }
 

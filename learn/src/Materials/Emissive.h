@@ -20,7 +20,7 @@ public:
     };
     void scale_radiance (const float f);
     void set_ce (const RGBColor& c);
-    virtual RGBColor get_Le () const;
+    virtual RGBColor getLe () const;
     virtual RGBColor shade (ShadeRec& sr) const;
     RGBColor get_ce () const;
     virtual RGBColor area_light_shade (ShadeRec& sr) const;

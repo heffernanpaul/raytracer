@@ -31,6 +31,7 @@ class Material {
         RGBColor get_Le () const {
         return black;
         }
+
 		
     virtual RGBColor area_light_shade(ShadeRec& sr);
 

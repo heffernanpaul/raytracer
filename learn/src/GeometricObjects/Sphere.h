@@ -18,5 +18,19 @@ public:
 
 	virtual bool hit(const Ray& ray, float& t, ShadeRec& s) const;	
     virtual void calcUV(ShadeRec& s) const;
-
+    virtual void getNormal(const Point3D& p, Normal& normal);
+    virtual Point3D sample(void) {
+        return center;
+    }
+    float getRadius() const {
+        return radius;
+    }
 };
+
+
+inline void Sphere::getNormal(const Point3D& p, Normal& normal) {
+    normal.x = p.x-center.x;
+    normal.y = p.x-center.y;
+    normal.z = p.x-center.z;
+    normal.normalize();
+}

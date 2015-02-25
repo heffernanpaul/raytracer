@@ -11,7 +11,7 @@ public:
 	PointLight(const RGBColor& colorIn, const Point3D& originIn, float lsIn) : Light(colorIn), origin(originIn), ls(lsIn) {
 	}
 			
-	virtual void getDirection(const Point3D& point, Vector3D& direction) const {
+	virtual void getDirection(const Point3D& point, Vector3D& direction) {
         direction.x = origin.x - point.x;
         direction.y = origin.y - point.y;
         direction.z = origin.z - point.z;

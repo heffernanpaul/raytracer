@@ -20,7 +20,12 @@ class Plane: public GeometricObject {
 		virtual														// destructor
 		~Plane(void);   											
 					
-		virtual bool 																								 
+    
+        void get_normal(const Point3D& p, Normal& normal) {
+            normal = n;
+        }
+
+    virtual bool
 		hit(const Ray& ray, float& tmin, ShadeRec& sr) const;
 
 		virtual bool shadow_hit (const Ray& ray, float &tmin) const; // shadow test: secondary ray

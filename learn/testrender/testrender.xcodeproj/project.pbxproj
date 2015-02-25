@@ -48,6 +48,10 @@
 		099268131A90C035008C1943 /* Vector3D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 099267EC1A90C035008C1943 /* Vector3D.cpp */; };
 		099268141A90C035008C1943 /* Vector3D.d in Sources */ = {isa = PBXBuildFile; fileRef = 099267ED1A90C035008C1943 /* Vector3D.d */; };
 		099268151A90C035008C1943 /* World.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 099267F11A90C035008C1943 /* World.cpp */; };
+		09DA87EA1A9C80F70001BE4C /* AreaLight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 09DA87E81A9C80F70001BE4C /* AreaLight.cpp */; };
+		09DA87F01A9C87AB0001BE4C /* MultiJittered.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 09DA87EC1A9C87AB0001BE4C /* MultiJittered.cpp */; };
+		09DA87F11A9C87AB0001BE4C /* Sampler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 09DA87EE1A9C87AB0001BE4C /* Sampler.cpp */; };
+		09DA87F41A9CA3660001BE4C /* Rectangle3D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 09DA87F21A9CA3660001BE4C /* Rectangle3D.cpp */; };
 		09F6E5EF1A981038001AF1C4 /* Emissive.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 09F6E5ED1A981038001AF1C4 /* Emissive.cpp */; };
 /* End PBXBuildFile section */
 
@@ -196,6 +200,14 @@
 		099267F01A90C035008C1943 /* ViewPlane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewPlane.h; sourceTree = "<group>"; };
 		099267F11A90C035008C1943 /* World.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = World.cpp; sourceTree = "<group>"; };
 		099267F21A90C035008C1943 /* World.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = World.h; sourceTree = "<group>"; };
+		09DA87E81A9C80F70001BE4C /* AreaLight.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AreaLight.cpp; sourceTree = "<group>"; };
+		09DA87E91A9C80F70001BE4C /* AreaLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AreaLight.h; sourceTree = "<group>"; };
+		09DA87EC1A9C87AB0001BE4C /* MultiJittered.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MultiJittered.cpp; sourceTree = "<group>"; };
+		09DA87ED1A9C87AB0001BE4C /* MultiJittered.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiJittered.h; sourceTree = "<group>"; };
+		09DA87EE1A9C87AB0001BE4C /* Sampler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sampler.cpp; sourceTree = "<group>"; };
+		09DA87EF1A9C87AB0001BE4C /* Sampler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sampler.h; sourceTree = "<group>"; };
+		09DA87F21A9CA3660001BE4C /* Rectangle3D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Rectangle3D.cpp; sourceTree = "<group>"; };
+		09DA87F31A9CA3660001BE4C /* Rectangle3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rectangle3D.h; sourceTree = "<group>"; };
 		09F6E5ED1A981038001AF1C4 /* Emissive.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Emissive.cpp; sourceTree = "<group>"; };
 		09F6E5EE1A981038001AF1C4 /* Emissive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Emissive.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -224,6 +236,7 @@
 		099266E51A9072EB008C1943 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				09DA87EB1A9C87AB0001BE4C /* Samplers */,
 				099267961A90A6DE008C1943 /* BRDFs */,
 				099266E61A9072EB008C1943 /* Cameras */,
 				099266E91A9072EB008C1943 /* GeometricObjects */,
@@ -252,6 +265,8 @@
 		099266E91A9072EB008C1943 /* GeometricObjects */ = {
 			isa = PBXGroup;
 			children = (
+				09DA87F21A9CA3660001BE4C /* Rectangle3D.cpp */,
+				09DA87F31A9CA3660001BE4C /* Rectangle3D.h */,
 				0974BDBE1A935F6D0010B3D7 /* OpenCylinder.cpp */,
 				0974BDBF1A935F6D0010B3D7 /* OpenCylinder.h */,
 				0974BDBB1A935BCF0010B3D7 /* Box.cpp */,
@@ -272,6 +287,8 @@
 				099266F31A9072EB008C1943 /* AmbientLight.h */,
 				099266F41A9072EB008C1943 /* Light.h */,
 				099266F51A9072EB008C1943 /* PointLight.h */,
+				09DA87E81A9C80F70001BE4C /* AreaLight.cpp */,
+				09DA87E91A9C80F70001BE4C /* AreaLight.h */,
 			);
 			path = Lights;
 			sourceTree = "<group>";
@@ -513,6 +530,17 @@
 			path = World;
 			sourceTree = "<group>";
 		};
+		09DA87EB1A9C87AB0001BE4C /* Samplers */ = {
+			isa = PBXGroup;
+			children = (
+				09DA87EC1A9C87AB0001BE4C /* MultiJittered.cpp */,
+				09DA87ED1A9C87AB0001BE4C /* MultiJittered.h */,
+				09DA87EE1A9C87AB0001BE4C /* Sampler.cpp */,
+				09DA87EF1A9C87AB0001BE4C /* Sampler.h */,
+			);
+			path = Samplers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXLegacyTarget section */
@@ -613,13 +641,17 @@
 				099267FC1A90C035008C1943 /* Matte.cpp in Sources */,
 				099268001A90C035008C1943 /* Maths.cpp in Sources */,
 				099268041A90C035008C1943 /* Mesh.cpp in Sources */,
+				09DA87F11A9C87AB0001BE4C /* Sampler.cpp in Sources */,
 				099268101A90C035008C1943 /* ShadeRec.cpp in Sources */,
 				099267FA1A90C035008C1943 /* main.cpp in Sources */,
 				099267F61A90C035008C1943 /* GeometricObject.cpp in Sources */,
 				099267F71A90C035008C1943 /* Plane.cpp in Sources */,
 				099267F51A90C035008C1943 /* Camera.cpp in Sources */,
+				09DA87F01A9C87AB0001BE4C /* MultiJittered.cpp in Sources */,
+				09DA87F41A9CA3660001BE4C /* Rectangle3D.cpp in Sources */,
 				099267951A90A34D008C1943 /* Matte.cpp in Sources */,
 				0992680E1A90C035008C1943 /* RGBColor.cpp in Sources */,
+				09DA87EA1A9C80F70001BE4C /* AreaLight.cpp in Sources */,
 				0992680A1A90C035008C1943 /* Point3D.cpp in Sources */,
 				099268151A90C035008C1943 /* World.cpp in Sources */,
 				09F6E5EF1A981038001AF1C4 /* Emissive.cpp in Sources */,
