@@ -4,9 +4,9 @@
 #include "Timing.h"
 #include "math.h"
 
-TGAImage* Tracer::render(const Camera& camera, const ViewPlane& vp, const World& world) {
+TGAImage* Tracer::render(const Camera& camera, const ViewPlane& vp, const World& world, TGAImage *img,
+                         int startRow, int blockSize) {
 
-	TGAImage *img = new TGAImage(vp.getHRes(), vp.getVRes());
 
 
 	Point2D 	pp;		// sample point on a pixel
@@ -22,11 +22,10 @@ TGAImage* Tracer::render(const Camera& camera, const ViewPlane& vp, const World&
     
     int n = (int)sqrt((float)vp.getNumSamples());
     int depth = 3;
-    auto start = GetTime();
 	// for each Row
-	for(int r=0; r<vp.getVRes(); r++)
+	for(int r=startRow; r<(startRow+blockSize); r++)
 	{
-        if (r%10 == 0) {
+        if (r%100 == 0) {
             std::cout << "Tracing row " << r << " of " << vp.getVRes() << std::endl;
         }
 		pp.y = r - halfHeight;
@@ -66,9 +65,6 @@ TGAImage* Tracer::render(const Camera& camera, const ViewPlane& vp, const World&
 	}
 
 
-	auto end = GetTime();
-	auto diff = end - start;
-	cout << chrono::duration <double, milli> (diff).count() << " ms" << endl;
 
 	return img;
 }

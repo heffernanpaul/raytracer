@@ -42,21 +42,22 @@ World::World() {
     sampler_ptr->generate_samples();
 	Material* redMatte = new Matte(1.0, 3.0, RGBColor(1.0, .4, .4));
 	Material* yellowMatte = new Matte(1.0, 3.0, RGBColor(1.0, 1.0, .4));
-	Material* pinkMatte = new Matte(1.5, 9.0, RGBColor(0.6, .2, .6));
-	Material* whiteEmissive = new Emissive(1.0, RGBColor(1.0, 1.0, 0.6));
-	Material* blueMatte = new Matte(1.0, 3.0, RGBColor(.4, .4, 1.0));
+	Material* pinkMatte = new Matte(1.5, 9.0, RGBColor(0.8, .3, .7));
+	Material* whiteEmissive = new Emissive(0.5, RGBColor(1.0, 1.0, 0.6));
+	Material* blueMatte = new Matte(1.0, 5.0, RGBColor(.4, .8, 1.0));
     Material* grassMatte = new Matte(1.0, 3.0, RGBColor(0.4, .8, .3));
+    Material* whiteMatte = new Matte(1.0, 3.0, RGBColor(1.0, 1.0, 1.0));
 
     // Balls
-//	objects.push_back(new Sphere(Point3D(-20,  0,60), 20, *redMatte));
+//	objects.push_back(new Sphere(Point3D(-20, -10, 38), 1, *redMatte));
     objects.push_back(new Sphere(Point3D(-80,   0,60), 20, *yellowMatte));
 	objects.push_back(new Sphere(Point3D(0,     0,60), 20, *pinkMatte));
-	objects.push_back(new Sphere(Point3D(50,    0,60), 20, *blueMatte));
+	objects.push_back(new Sphere(Point3D(50,    0,60), 20, *whiteMatte));
 
 //    objects.push_back(new OpenCylinder(*redMatte, -10, -10, 10));
 
     // Planes
-    objects.push_back(new Plane(Point3D(0,0,100), Normal(0,0.0,-1), *blueMatte));
+    objects.push_back(new Plane(Point3D(0,0,100), Normal(0,0.2,-1), *blueMatte));
     objects.push_back(new Plane(Point3D(0,-20,0), Normal(0,1,0), *grassMatte));
 
     Rectangle3D* lightGlobe1 = new Rectangle3D(*whiteEmissive, Point3D(-100,   70,100), Vector3D(40,0,0), Vector3D(0,0,-80), Normal(0,-1,0), sampler_ptr);
@@ -76,7 +77,7 @@ World::World() {
     
     
     // Lights
-//    lights.push_back(new PointLight(RGBColor(0.8, 0.8, 0.8), Point3D(30, 30, 30), 0.4));
+    lights.push_back(new PointLight(RGBColor(0.8, 0.8, 0.1), Point3D(-65, -18, 60), 0.8));
 //    lights.push_back(new PointLight(RGBColor(0.8, 0.8, 0.8), Point3D(-100, 100, 20), 0.3));
 //    lights.push_back(new PointLight(RGBColor(0.6, 0.0, 0.0), Point3D(-100, 400, 850), 0.5));
 //    lights.push_back(new PointLight(RGBColor(0.6, 0.6, 0.4), Point3D(50, -20, 50), 0.5));

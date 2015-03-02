@@ -15,19 +15,19 @@
 
 // --------------------------------------------------------------- get_direction
 
-void AreaLight::getDirection(const Point3D& point, Vector3D& direction) {
+void AreaLight::getDirection(const Point3D& point, ShadeRec& sr) {
 //    sample_point = object_ptr->sample();    // used in the G function
 //    object_ptr->getNormal(sample_point, light_normal);
 //    direction = sample_point - point;  		// used in the G function
 //    direction.normalize();
     
     
-    sample_point = object_ptr->sample();    // used in the G function
-    object_ptr->getNormal(sample_point, light_normal);
-    wi = point - sample_point;  		// used in the G function
-    wi.normalize();
+    sr.samplePoint = object_ptr->sample();    // used in the G function
+    object_ptr->getNormal(sr.samplePoint, sr.lightNormal);
+    sr.lightDirection = point - sr.samplePoint;  		// used in the G function
+    sr.lightDirection.normalize();
     
-    direction = wi;
+//    direction = wi;
 
 //    light_normal.x = 0.0;
 //    light_normal.y = 1.0;
@@ -45,7 +45,7 @@ void AreaLight::getDirection(const Point3D& point, Vector3D& direction) {
 
 RGBColor
 AreaLight::L(const ShadeRec& sr) {
-    float ndotd = light_normal * wi;
+    float ndotd = sr.lightNormal * sr.lightDirection;
     
     if (ndotd > 0.0)
         return (object_ptr->getMaterial().getLe());
@@ -66,7 +66,7 @@ AreaLight::in_shadow(const Ray& ray, ShadeRec& sr) const {
 //        return false;
 //    }
     ShadeRec localSR(sr);
-    float ts = (sample_point - ray.o) * ray.d;
+    float ts = (sr.samplePoint - ray.o) * ray.d;
     return (sr.w.hit_objects(ray, localSR) && localSR.t< (ts-0.1));
 
 }
@@ -77,8 +77,8 @@ AreaLight::in_shadow(const Ray& ray, ShadeRec& sr) const {
 
 
 float AreaLight::G(const ShadeRec& sr) const {
-    float ndotd = light_normal * wi;
-    float d2 	= sample_point.d_squared(sr.local_hit_point);
+    float ndotd = sr.lightNormal * sr.lightDirection;
+    float d2 	= sr.samplePoint.d_squared(sr.local_hit_point);
     
     return (ndotd / d2);
 }

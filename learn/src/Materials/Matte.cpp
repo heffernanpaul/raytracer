@@ -17,15 +17,14 @@ Matte::shade(ShadeRec& sr) const {
     RGBColor 	L 			= ambient_brdf->rho(sr, wo) * sr.w.ambient_ptr->L(sr);
 
     int 		num_lights	= sr.w.getLights().size();
-    Vector3D wi;
     for (int j = 0; j < num_lights; j++) {
         Light* light = sr.w.getLights()[j];
 
-        light->getDirection(sr.local_hit_point, wi);
-        float ndotwi = sr.normal * wi;
+        light->getDirection(sr.local_hit_point, sr);
+        float ndotwi = sr.normal * sr.lightDirection;
         
         if (ndotwi > 0.0)
-            L += diffuse_brdf->f(sr, wo, wi) * light->L(sr) * ndotwi;
+            L += diffuse_brdf->f(sr, wo, sr.lightDirection) * light->L(sr) * ndotwi;
     }
     
     return (L);
@@ -39,9 +38,8 @@ Matte::area_light_shade(ShadeRec& sr) const {
     
     for (int j = 0; j < num_lights; j++) {
         Light* light =sr.w.getLights()[j];
-        Vector3D 	wi;
-        light->getDirection(sr.local_hit_point, wi);
-        float 		ndotwi 	= sr.normal * -wi;
+        light->getDirection(sr.local_hit_point, sr);
+        float 		ndotwi 	= sr.normal * -sr.lightDirection;
         
         if (ndotwi > 0.0) {
             bool in_shadow = false;
@@ -50,16 +48,16 @@ Matte::area_light_shade(ShadeRec& sr) const {
                 in_shadow = false;
             }
             if (light->casts_shadows()) {
-                Ray shadow_ray(sr.local_hit_point, -wi);
+                Ray shadow_ray(sr.local_hit_point, -sr.lightDirection);
                 in_shadow = light->in_shadow(shadow_ray, sr);
             }
             
             if (!in_shadow) {
                 float g = light->G(sr);
                 float pdf = light->pdf(sr);
-                RGBColor f = diffuse_brdf->f(sr, wo, wi);
+                RGBColor f = diffuse_brdf->f(sr, wo, sr.lightDirection);
                 RGBColor l = light->L(sr);
-                L += diffuse_brdf->f(sr, wo, wi) * light->L(sr) * light->G(sr) * ndotwi / light->pdf(sr);
+                L += diffuse_brdf->f(sr, wo, sr.lightDirection) * light->L(sr) * light->G(sr) * ndotwi / light->pdf(sr);
             } else {
                 L += RGBColor(0);
             }

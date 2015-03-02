@@ -7,11 +7,12 @@ public:
 	AmbientLight(const RGBColor& color) : Light(color) {
 	}
 
-	virtual void getDirection(const Point3D& point, Vector3D& direction) {
-        direction.x = -point.x;
-        direction.y = -point.y;
-        direction.z = -point.z;
-        direction.normalize();
+	virtual void getDirection(const Point3D& point, ShadeRec& sr) {
+        sr.lightDirection.x = -point.x;
+        sr.lightDirection.y = -point.y;
+        sr.lightDirection.z = -point.z;
+        sr.lightDirection.normalize();
+        sr.samplePoint=point;
 	}
 
     RGBColor L(const ShadeRec& sr) {

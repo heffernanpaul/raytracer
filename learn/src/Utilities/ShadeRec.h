@@ -28,9 +28,16 @@ class ShadeRec {
 	
 		bool				hit_an_object;		// did the ray hit an object?
 		//Point3D 			hit_point;			// world coordinates of intersection
-		Point3D				local_hit_point;	// world coordinates of hit point on untransformed object (used for texture transformations)
-		Normal				normal;				// normal at hit point
-		Ray					ray;				// required for specular highlights and area lights
+		Point3D				local_hit_point;	// world coordinates of hit point on untransformed
+    
+
+    Normal				normal;				// normal at hit point
+
+    Point3D				samplePoint;	// world coordinates of hit point on untransformed object
+    Normal				lightNormal;				// normal at hit point
+    Vector3D lightDirection;
+
+    Ray					ray;				// required for specular highlights and area lights
 		int					depth;				// recursion depth
 		RGBColor			color;				// used in the Chapter 3 only
 		float				t;					// ray parameter

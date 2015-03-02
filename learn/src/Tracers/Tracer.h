@@ -12,6 +12,7 @@ public:
 	Tracer() {
 	}
 
-	TGAImage *render(const Camera& camera, const ViewPlane& vp, const World& world);
+	TGAImage *render(const Camera& camera, const ViewPlane& vp, const World& world, TGAImage *img,
+                     int startRow, int blockSize);
 
 };
